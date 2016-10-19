@@ -1,0 +1,19 @@
+PODS:
+  - RxSwift (3.0.0-rc.1)
+  - RxUserDefaults (0.1.0):
+    - RxSwift (~> 3.0.0-rc.1)
+
+DEPENDENCIES:
+  - RxUserDefaults (from `../`)
+
+EXTERNAL SOURCES:
+  RxUserDefaults:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
+  RxUserDefaults: 2fef615b9b382137f11fae8060a18f91d21f9fc9
+
+PODFILE CHECKSUM: e253074737014d596f2702f811ee2c466a7057f5
+
+COCOAPODS: 1.1.0.rc.3
