@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/num42/RxUserDefaults'
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE.txt' }
   s.author           = { 'David Kraus' => 'kraus.david.dev@gmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/RxUserDefaults.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/num42/RxUserDefaults.git', :tag => s.version.to_s }
  
 
   s.ios.deployment_target = '8.0'
