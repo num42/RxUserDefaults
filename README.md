@@ -1,6 +1,6 @@
 # RxUserDefaults
 
-[![CI Status](http://img.shields.io/travis/David Kraus/RxUserDefaults.svg?style=flat)](https://travis-ci.org/David Kraus/RxUserDefaults)
+[![CI Status](http://img.shields.io/travis/num42/RxUserDefaults.svg?style=flat)](https://travis-ci.org/num42/RxUserDefaults)
 [![Version](https://img.shields.io/cocoapods/v/RxUserDefaults.svg?style=flat)](http://cocoapods.org/pods/RxUserDefaults)
 [![License](https://img.shields.io/cocoapods/l/RxUserDefaults.svg?style=flat)](http://cocoapods.org/pods/RxUserDefaults)
 [![Platform](https://img.shields.io/cocoapods/p/RxUserDefaults.svg?style=flat)](http://cocoapods.org/pods/RxUserDefaults)
