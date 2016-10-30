@@ -175,10 +175,10 @@ class Tests: XCTestCase {
         let setting = Setting<String>(userDefaults: userDefaults, key: "rx_test", defaultValue: "nothing")
 
 
-        _ = setting.asObservable().debug().take(4).toArray().subscribe(onNext: { (values) in
+        _ = setting.asObservable().debug().take(5).toArray().subscribe(onNext: { (values) in
 
             // check the sequence
-            XCTAssertEqual(values, ["nothing", "string_value_1", "string_value_2","nothing"])
+            XCTAssertEqual(values, ["nothing", "string_value_1", "string_value_2","string_value_3","nothing"])
 
             // release the semaphore
             expectation.fulfill()
@@ -187,14 +187,40 @@ class Tests: XCTestCase {
                 XCTFail()
             }, onCompleted: nil, onDisposed: nil)
 
+        // set two values
         setting.value = "string_value_1"
         setting.value = "string_value_2"
+
+        // set a value directly
+        userDefaults.set("string_value_3", forKey: "rx_test")
+
+        // remove a value
         setting.remove()
 
 
         waitForExpectations(timeout: 10)
 
     }
-    
+
+// TODO: figure out how to create an error when using unsupported types
+//    func testUnsupportedType() {
+//
+//        struct Unsupported: RxSettingCompatible {
+//            func toPersistedValue() -> Any {
+//                return self
+//            }
+//
+//            static func fromPersistedValue(value:Any) -> Unsupported {
+//                return value as! Unsupported
+//            }
+//        }
+//
+//        let setting = Setting<Unsupported>(userDefaults: userDefaults, key: "unsupported_test", defaultValue: Unsupported())
+//
+//        setting.value = Unsupported()
+//
+//        
+//    }
+
 }
 

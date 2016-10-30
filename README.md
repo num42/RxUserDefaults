@@ -50,10 +50,6 @@ setting.asObservable()
 
 ```
 ## Warnings & TODOs
-
-Currently the reactive stream only fires if you change the value through the Setting class. 
-I have not found a good solution (that does not require KVO) to observe changes.
-
 I want to support everything that the UserDefaults support (e.g. Dictionary, URL ...).
 For now you can expand the library to more types by conforming to the RxSettingCompatible protocol.
 But note that persisting types that are not supported by the UserDefaults will fail silently.

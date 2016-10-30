@@ -15,25 +15,28 @@
  */
 
 import RxSwift
+import RxCocoa
 
 public class Setting<T: RxSettingCompatible> {
     let userDefaults: UserDefaults
     let key: String
     let defaultValue: T
 
-    fileprivate var rxValue: BehaviorSubject<T>!
 
     public init(userDefaults: UserDefaults, key: String, defaultValue: T) {
         self.key = key
         self.userDefaults =  userDefaults
         self.defaultValue = defaultValue
 
-        self.rxValue = BehaviorSubject(value: self.value)
-
     }
 
     public func asObservable() -> Observable<T> {
-        return rxValue
+        return userDefaults.rx.observe(T.self, key).map({ value -> T in
+            if value == nil {
+                return self.defaultValue
+            }
+            return value!
+        })
     }
 
     public var isSet: Bool {
@@ -44,14 +47,12 @@ public class Setting<T: RxSettingCompatible> {
 
     public func remove() {
         userDefaults.removeObject(forKey: self.key)
-        rxValue.onNext(self.defaultValue)
     }
 
     public var value: T {
         set(newValue) {
             let persValue = newValue.toPersistedValue()
             userDefaults.set(persValue, forKey: key)
-            rxValue.onNext(newValue)
         }
         get {
 
