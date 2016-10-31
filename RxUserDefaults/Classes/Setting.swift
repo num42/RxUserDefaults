@@ -19,8 +19,8 @@ import RxCocoa
 
 public class Setting<T: RxSettingCompatible> {
     let userDefaults: UserDefaults
-    let key: String
-    let defaultValue: T
+    public let key: String
+    public let defaultValue: T
 
 
     public init(userDefaults: UserDefaults, key: String, defaultValue: T) {
