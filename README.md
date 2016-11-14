@@ -15,11 +15,10 @@ Typehandling was inspired by [wrap] and [unbox]
 
 ## Usage
 
-There is only one class called Setting.
-
 To create a setting use the constructor of that class:
 ```swift
-let setting = Setting<String>(userDefaults: userDefaults, key: "INSERT_KEY", defaultValue: "DEFAULT")
+let settings = RxSettings(userDefaults: userDefaults)
+let setting = settings.setting(key: "INSERT_KEY", defaultValue: "DEFAULT")
 ```
 The arguments should be self explanatory.
 
@@ -49,6 +48,11 @@ setting.remove()
 setting.asObservable()
 
 ```
+
+## Storage Layer
+If you do not want to use the UserDefaults as a storage layer you can implement your own.
+To do this you have to confirm to the StorageLayer Protocol.
+
 ## Warnings & TODOs
 I want to support everything that the UserDefaults support (e.g. Dictionary, URL ...).
 For now you can expand the library to more types by conforming to the RxSettingCompatible protocol.
