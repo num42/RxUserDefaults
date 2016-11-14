@@ -17,53 +17,113 @@
 import RxSwift
 import RxCocoa
 
-public class Setting<T: RxSettingCompatible> {
+
+public protocol StorageLayer {
+
+    func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T>
+
+    func isSet(key: String) -> Bool
+
+    func remove(key: String)
+
+    func save<T: RxSettingCompatible>(value: T, key: String)
+
+    func get<T: RxSettingCompatible>(key: String, defaultValue: T) -> T
+}
+
+public class UserDefaultsStorageLayer: StorageLayer {
+
     let userDefaults: UserDefaults
-    public let key: String
-    public let defaultValue: T
 
-
-    public init(userDefaults: UserDefaults, key: String, defaultValue: T) {
-        self.key = key
-        self.userDefaults =  userDefaults
-        self.defaultValue = defaultValue
-
+    public init(userDefaults: UserDefaults) {
+        self.userDefaults = userDefaults
     }
 
-    public func asObservable() -> Observable<T> {
+
+    public func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T> {
         return userDefaults.rx.observe(T.self, key).map({ value -> T in
             if value == nil {
-                return self.defaultValue
+                return defaultValue
             }
             return value!
         })
     }
 
+    public func isSet(key: String) -> Bool {
+        return userDefaults.dictionaryRepresentation().keys.contains(key)
+    }
+
+    public func remove(key: String) {
+        userDefaults.removeObject(forKey: key)
+    }
+
+    public func save<T: RxSettingCompatible>(value: T, key: String) {
+        let persValue = value.toPersistedValue()
+        userDefaults.set(persValue, forKey: key)
+    }
+
+    public func get<T: RxSettingCompatible>(key: String, defaultValue: T) -> T {
+        if self.isSet(key: key) {
+            return T.fromPersistedValue(value: userDefaults.value(forKey: key))
+        }
+
+        return defaultValue
+    }
+
+}
+
+public class RxSettings {
+
+
+    private let userDefaultsStorageLayer: UserDefaultsStorageLayer
+
+    public init(userDefaults: UserDefaults) {
+        self.userDefaultsStorageLayer = UserDefaultsStorageLayer(userDefaults: userDefaults)
+    }
+
+    public func setting<T: RxSettingCompatible>(key: String, defaultValue: T) -> Setting<T> {
+        return Setting<T>(storageLayer: userDefaultsStorageLayer, key: key, defaultValue: defaultValue)
+    }
+
+}
+
+
+
+public class Setting<T: RxSettingCompatible> {
+
+    public let key: String
+    public let defaultValue: T
+    let storageLayer: StorageLayer
+
+    public init(storageLayer: StorageLayer, key: String, defaultValue: T) {
+        self.storageLayer = storageLayer
+        self.key = key
+        self.defaultValue = defaultValue
+    }
+
+    public func asObservable() -> Observable<T> {
+        return storageLayer.asObservable(key: key, defaultValue: defaultValue)
+    }
+
     public var isSet: Bool {
         get {
-            return userDefaults.dictionaryRepresentation().keys.contains(self.key)
+            return storageLayer.isSet(key: self.key)
         }
     }
 
     public func remove() {
-        userDefaults.removeObject(forKey: self.key)
+        storageLayer.remove(key: self.key)
     }
 
     public var value: T {
         set(newValue) {
-            let persValue = newValue.toPersistedValue()
-            userDefaults.set(persValue, forKey: key)
+            storageLayer.save(value: newValue, key: self.key)
         }
         get {
-
-            if self.isSet {
-                return T.fromPersistedValue(value: userDefaults.value(forKey: self.key))
-            }
-
-            return defaultValue
-
+            return storageLayer.get(key: self.key, defaultValue: self.defaultValue)
         }
     }
+
 }
 
 public protocol RxSettingCompatible {
@@ -132,6 +192,18 @@ extension Array: RxSettingCompatible {
 
     public static func fromPersistedValue(value: Any) -> Array<Element> {
         return value as! Array<Element>
+    }
+}
+
+// Set is not supported, work around with an array
+extension Set: RxSettingCompatible {
+
+    public func toPersistedValue() -> Any {
+        return Array(self)
+    }
+
+    public static func fromPersistedValue(value: Any) -> Set<Element> {
+        return Set(value as! Array<Element>)
     }
 }
 

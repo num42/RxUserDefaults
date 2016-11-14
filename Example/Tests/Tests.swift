@@ -7,11 +7,13 @@ class Tests: XCTestCase {
 
 
     var userDefaults: UserDefaults!
+    var settings: RxSettings!
     
     override func setUp() {
         super.setUp()
 
         userDefaults = UserDefaults(suiteName: "testing")
+        settings = RxSettings(userDefaults: userDefaults)
 
     }
     
@@ -27,7 +29,7 @@ class Tests: XCTestCase {
     
     func testStringSetting() {
 
-        let setting = Setting<String>(userDefaults: userDefaults, key: "string_test", defaultValue: "nothing")
+        let setting = settings.setting(key: "string_test", defaultValue: "nothing")
 
         // first test default value
         XCTAssertEqual(setting.value, "nothing")
@@ -53,7 +55,7 @@ class Tests: XCTestCase {
 
     func testIntSetting() {
 
-        let setting = Setting<Int>(userDefaults: userDefaults, key: "int_test", defaultValue: 42)
+        let setting = settings.setting(key: "int_test", defaultValue: 42)
 
         // first test default value
         XCTAssertEqual(setting.value, 42)
@@ -80,7 +82,7 @@ class Tests: XCTestCase {
 
     func testBoolSetting() {
 
-        let setting = Setting<Bool>(userDefaults: userDefaults, key: "bool_test", defaultValue: true)
+        let setting = settings.setting(key: "bool_test", defaultValue: true)
 
         // first test default value
         XCTAssertEqual(setting.value, true)
@@ -115,7 +117,7 @@ class Tests: XCTestCase {
             
         }
 
-        let setting = Setting<TestEnum>(userDefaults: userDefaults, key: "enum_test", defaultValue: .test0)
+        let setting:Setting<TestEnum> = settings.setting(key: "enum_test", defaultValue: .test0)
 
         // first test default value
         XCTAssertEqual(setting.value, .test0)
@@ -141,7 +143,34 @@ class Tests: XCTestCase {
 
     func testArraySetting() {
 
-        let setting = Setting<[Int]>(userDefaults: userDefaults, key: "array_test", defaultValue: [1,2])
+        let setting:Setting<[Int]> = settings.setting(key: "array_test", defaultValue: [1,2])
+
+        // first test default value
+        XCTAssertEqual(setting.value, [1,2])
+        // test that setting is not persisted
+        XCTAssert(!setting.isSet)
+
+        // set the value
+        setting.value = [1,2,3]
+
+
+        // check if value is present
+        XCTAssertEqual(setting.value, [1,2,3])
+        XCTAssert(setting.isSet)
+
+
+        // remove value
+        setting.remove()
+
+        // check that value was removed
+        XCTAssert(!setting.isSet)
+        
+    }
+
+
+    func testSetSetting() {
+
+        let setting:Setting<Set<Int>> = settings.setting(key: "set_test", defaultValue: [1,2])
 
         // first test default value
         XCTAssertEqual(setting.value, [1,2])
@@ -172,7 +201,7 @@ class Tests: XCTestCase {
 
         let expectation = self.expectation(description: "values observed")
 
-        let setting = Setting<String>(userDefaults: userDefaults, key: "rx_test", defaultValue: "nothing")
+        let setting = settings.setting(key: "rx_test", defaultValue: "nothing")
 
 
         _ = setting.asObservable().debug().take(5).toArray().subscribe(onNext: { (values) in
