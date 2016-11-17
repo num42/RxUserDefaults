@@ -70,7 +70,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod "RxUserDefaults"
-pod 'RxSwift', '3.0.0-beta.1'
+pod 'RxSwift', '3.0.0'
 ```
 
 ## Requirements
@@ -81,7 +81,7 @@ pod 'RxSwift', '3.0.0-beta.1'
 ## Author
 
 David Kraus, kraus.david.dev@gmail.com
-
+Hans-Martin Schuller, hm.schuller@gmail.com
 
 License
 -------
