@@ -41,11 +41,8 @@ public class UserDefaultsStorageLayer: StorageLayer {
 
 
     public func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T> {
-        return userDefaults.rx.observe(T.self, key).map({ value -> T in
-            if value == nil {
-                return defaultValue
-            }
-            return value!
+        return userDefaults.rx.observe(T.self, key).map({ _ -> T in
+            return self.get(key: key, defaultValue: defaultValue)
         })
     }
 

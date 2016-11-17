@@ -197,8 +197,6 @@ class Tests: XCTestCase {
 
     func testRxSetting() {
 
-
-
         let expectation = self.expectation(description: "values observed")
 
         let setting = settings.setting(key: "rx_test", defaultValue: "nothing")
@@ -229,6 +227,48 @@ class Tests: XCTestCase {
 
         waitForExpectations(timeout: 10)
 
+    }
+    
+    func testRxEnumSetting() {
+        
+        enum TestEnum: String, RxSettingEnum {
+            
+            case test0,
+            test1,
+            test2,
+            defaultValue
+            
+        }
+        
+        let expectation = self.expectation(description: "values observed")
+        let setting = settings.setting(key: "rx_enum_test", defaultValue: TestEnum.defaultValue)
+        
+        _ = setting.asObservable().debug().map { value in
+                return value.rawValue
+            } .take(5).toArray().subscribe(onNext: { (values) in
+            
+            // check the sequence
+            XCTAssertEqual( values, [TestEnum.defaultValue.rawValue, TestEnum.test0.rawValue, TestEnum.test1.rawValue, TestEnum.test2.rawValue, TestEnum.defaultValue.rawValue])
+            
+            // release the semaphore
+            expectation.fulfill()
+            
+            }, onError: { _ in
+                XCTFail()
+            }, onCompleted: nil, onDisposed: nil)
+        
+        // set two values
+        setting.value = .test0
+        setting.value = .test1
+        
+        // set a value directly
+        userDefaults.set(TestEnum.test2.rawValue, forKey: "rx_enum_test")
+        
+        // remove a value
+        setting.remove()
+        
+        waitForExpectations(timeout: 10)
+        
     }
 
 // TODO: figure out how to create an error when using unsupported types
