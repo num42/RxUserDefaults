@@ -32,3 +32,5 @@ ipas
 .bundle
 
 Pods/
+/Carthage
+/Example/build
