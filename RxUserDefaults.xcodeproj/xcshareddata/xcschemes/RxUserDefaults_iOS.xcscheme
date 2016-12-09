@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6502000B1DF9A04B00711914"
-               BuildableName = "RxUserDefaults_iOS.framework"
+               BuildableName = "RxUserDefaults.framework"
                BlueprintName = "RxUserDefaults_iOS"
                ReferencedContainer = "container:RxUserDefaults.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6502000B1DF9A04B00711914"
-            BuildableName = "RxUserDefaults_iOS.framework"
+            BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6502000B1DF9A04B00711914"
-            BuildableName = "RxUserDefaults_iOS.framework"
+            BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
