@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		650200181DF9A07600711914 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 650200171DF9A07600711914 /* Info.plist */; };
 		650200291DF9A0ED00711914 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650200281DF9A0ED00711914 /* Setting.swift */; };
-		65B4096B1DF9A34700740CBA /* RxUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B4096A1DF9A34700740CBA /* RxUserDefaults.h */; };
-		65B4096C1DF9A34700740CBA /* RxUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B4096A1DF9A34700740CBA /* RxUserDefaults.h */; };
+		65B4096B1DF9A34700740CBA /* RxUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B4096A1DF9A34700740CBA /* RxUserDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65B4096C1DF9A34700740CBA /* RxUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B4096A1DF9A34700740CBA /* RxUserDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65B4096D1DF9A5C300740CBA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650200281DF9A0ED00711914 /* Setting.swift */; };
 		65B409771DF9A96C00740CBA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B409751DF9A96C00740CBA /* RxCocoa.framework */; };
 		65B409781DF9A96C00740CBA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B409761DF9A96C00740CBA /* RxSwift.framework */; };
@@ -20,9 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6502000C1DF9A04B00711914 /* RxUserDefaults_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUserDefaults_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6502000C1DF9A04B00711914 /* RxUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		650200171DF9A07600711914 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		6502001E1DF9A0A600711914 /* RxUserDefaults_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUserDefaults_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6502001E1DF9A0A600711914 /* RxUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		650200281DF9A0ED00711914 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = Classes/Setting.swift; sourceTree = "<group>"; };
 		65B4096A1DF9A34700740CBA /* RxUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxUserDefaults.h; sourceTree = SOURCE_ROOT; };
 		65B409751DF9A96C00740CBA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/tvOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 		6502000D1DF9A04B00711914 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6502000C1DF9A04B00711914 /* RxUserDefaults_iOS.framework */,
-				6502001E1DF9A0A600711914 /* RxUserDefaults_tvOS.framework */,
+				6502000C1DF9A04B00711914 /* RxUserDefaults.framework */,
+				6502001E1DF9A0A600711914 /* RxUserDefaults.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 			);
 			name = RxUserDefaults_iOS;
 			productName = RxUserDefaults;
-			productReference = 6502000C1DF9A04B00711914 /* RxUserDefaults_iOS.framework */;
+			productReference = 6502000C1DF9A04B00711914 /* RxUserDefaults.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6502001D1DF9A0A600711914 /* RxUserDefaults_tvOS */ = {
@@ -147,7 +147,7 @@
 			);
 			name = RxUserDefaults_tvOS;
 			productName = RxUserDefaults;
-			productReference = 6502001E1DF9A0A600711914 /* RxUserDefaults_tvOS.framework */;
+			productReference = 6502001E1DF9A0A600711914 /* RxUserDefaults.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -343,7 +343,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RxUserDefaults;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -367,7 +367,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RxUserDefaults;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -389,7 +389,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RxUserDefaults;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -414,7 +414,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RxUserDefaults;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
