@@ -16,6 +16,7 @@
 		65B409781DF9A96C00740CBA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B409761DF9A96C00740CBA /* RxSwift.framework */; };
 		65B4097B1DF9A97800740CBA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B409791DF9A97800740CBA /* RxCocoa.framework */; };
 		65B4097C1DF9A97800740CBA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4097A1DF9A97800740CBA /* RxSwift.framework */; };
+		845070D91DFAF3D500F5F6B7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 650200171DF9A07600711914 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845070D91DFAF3D500F5F6B7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
