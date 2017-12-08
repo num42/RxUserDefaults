@@ -17,7 +17,6 @@
 import RxSwift
 import RxCocoa
 
-
 public protocol StorageLayer {
 
     func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T>
@@ -61,7 +60,7 @@ public class UserDefaultsStorageLayer: StorageLayer {
 
     public func get<T: RxSettingCompatible>(key: String, defaultValue: T) -> T {
         if self.isSet(key: key) {
-            return T.fromPersistedValue(value: userDefaults.value(forKey: key))
+          return T.fromPersistedValue(value: userDefaults.value(forKey: key) as Any)
         }
 
         return defaultValue
