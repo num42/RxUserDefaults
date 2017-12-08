@@ -17,7 +17,7 @@
                BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
                BuildableName = "Framework.framework"
                BlueprintName = "Framework-tvOS"
-               ReferencedContainer = "container:Framework.xcodeproj">
+               ReferencedContainer = "container:RxUserDefaults.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
                BlueprintIdentifier = "846A7BC51FDA9D2200803686"
                BuildableName = "Framework-tvOSTests.xctest"
                BlueprintName = "Framework-tvOSTests"
-               ReferencedContainer = "container:Framework.xcodeproj">
+               ReferencedContainer = "container:RxUserDefaults.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -46,7 +46,7 @@
             BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
             BuildableName = "Framework.framework"
             BlueprintName = "Framework-tvOS"
-            ReferencedContainer = "container:Framework.xcodeproj">
+            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -69,7 +69,7 @@
             BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
             BuildableName = "Framework.framework"
             BlueprintName = "Framework-tvOS"
-            ReferencedContainer = "container:Framework.xcodeproj">
+            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -87,7 +87,7 @@
             BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
             BuildableName = "Framework.framework"
             BlueprintName = "Framework-tvOS"
-            ReferencedContainer = "container:Framework.xcodeproj">
+            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

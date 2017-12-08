@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-               BuildableName = "Framework.framework"
+               BuildableName = "RxUserDefaults.framework"
                BlueprintName = "Framework-iOS"
-               ReferencedContainer = "container:Framework.xcodeproj">
+               ReferencedContainer = "container:RxUserDefaults.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
                BlueprintIdentifier = "846A7BA91FDA9CF300803686"
                BuildableName = "Framework-iOSTests.xctest"
                BlueprintName = "Framework-iOSTests"
-               ReferencedContainer = "container:Framework.xcodeproj">
+               ReferencedContainer = "container:RxUserDefaults.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-            BuildableName = "Framework.framework"
+            BuildableName = "RxUserDefaults.framework"
             BlueprintName = "Framework-iOS"
-            ReferencedContainer = "container:Framework.xcodeproj">
+            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-            BuildableName = "Framework.framework"
+            BuildableName = "RxUserDefaults.framework"
             BlueprintName = "Framework-iOS"
-            ReferencedContainer = "container:Framework.xcodeproj">
+            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-            BuildableName = "Framework.framework"
+            BuildableName = "RxUserDefaults.framework"
             BlueprintName = "Framework-iOS"
-            ReferencedContainer = "container:Framework.xcodeproj">
+            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
