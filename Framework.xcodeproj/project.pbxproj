@@ -22,8 +22,8 @@
 		844F44A51FDAB6E70043F96A /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 844F448B1FDAA43D0043F96A /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		844F44A61FDAB6E70043F96A /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 844F448C1FDAA43E0043F96A /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		846A7BAB1FDA9CF300803686 /* RxUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846A7BA21FDA9CF300803686 /* RxUserDefaults.framework */; };
-		846A7BB21FDA9CF400803686 /* RxUserDefaults_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 846A7BA41FDA9CF300803686 /* RxUserDefaults_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		846A7BCE1FDA9D2200803686 /* RxUserDefaults_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 846A7BC01FDA9D2200803686 /* RxUserDefaults_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		846A7BB21FDA9CF400803686 /* Framework_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 846A7BA41FDA9CF300803686 /* Framework_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		846A7BCE1FDA9D2200803686 /* Framework_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 846A7BC01FDA9D2200803686 /* Framework_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		846A7BDC1FDA9E6900803686 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A7BDB1FDA9E6900803686 /* Setting.swift */; };
 		846A7BDD1FDA9E6900803686 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A7BDB1FDA9E6900803686 /* Setting.swift */; };
 /* End PBXBuildFile section */
@@ -34,14 +34,14 @@
 			containerPortal = 846A7B7A1FDA9CC900803686 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 846A7BA11FDA9CF300803686;
-			remoteInfo = "RxUserDefaults-iOS";
+			remoteInfo = "Framework-iOS";
 		};
 		846A7BC81FDA9D2200803686 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 846A7B7A1FDA9CC900803686 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 846A7BBD1FDA9D2200803686;
-			remoteInfo = "RxUserDefaults-tvOS";
+			remoteInfo = "Framework-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -76,15 +76,16 @@
 		844F44891FDAA4120043F96A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		844F448B1FDAA43D0043F96A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/tvOS/RxCocoa.framework; sourceTree = "<group>"; };
 		844F448C1FDAA43E0043F96A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/tvOS/RxSwift.framework; sourceTree = "<group>"; };
+		844F44AA1FDABB1F0043F96A /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		846A7BA21FDA9CF300803686 /* RxUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		846A7BA41FDA9CF300803686 /* RxUserDefaults_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUserDefaults_iOS.h; sourceTree = "<group>"; };
+		846A7BA41FDA9CF300803686 /* Framework_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Framework_iOS.h; sourceTree = "<group>"; };
 		846A7BA51FDA9CF300803686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846A7BAA1FDA9CF300803686 /* RxUserDefaults-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxUserDefaults-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A7BAA1FDA9CF300803686 /* Framework-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A7BB11FDA9CF300803686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846A7BBE1FDA9D2200803686 /* RxUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		846A7BC01FDA9D2200803686 /* RxUserDefaults_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUserDefaults_tvOS.h; sourceTree = "<group>"; };
+		846A7BBE1FDA9D2200803686 /* Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A7BC01FDA9D2200803686 /* Framework_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Framework_tvOS.h; sourceTree = "<group>"; };
 		846A7BC11FDA9D2200803686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846A7BC61FDA9D2200803686 /* RxUserDefaults-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxUserDefaults-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A7BC61FDA9D2200803686 /* Framework-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A7BCD1FDA9D2200803686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846A7BDB1FDA9E6900803686 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,15 +166,24 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		844F44A91FDABB0C0043F96A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				844F44AA1FDABB1F0043F96A /* Framework.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		846A7B791FDA9CC900803686 = {
 			isa = PBXGroup;
 			children = (
+				844F44A91FDABB0C0043F96A /* Config */,
 				846A7BDA1FDA9E6900803686 /* Sources */,
 				844F44821FDAA0BF0043F96A /* Tests */,
-				846A7BA31FDA9CF300803686 /* RxUserDefaults-iOS */,
-				846A7BBF1FDA9D2200803686 /* RxUserDefaults-tvOS */,
-				846A7BAE1FDA9CF300803686 /* RxUserDefaults-iOSTests */,
-				846A7BCA1FDA9D2200803686 /* RxUserDefaults-tvOSTests */,
+				846A7BA31FDA9CF300803686 /* Framework-iOS */,
+				846A7BBF1FDA9D2200803686 /* Framework-tvOS */,
+				846A7BAE1FDA9CF300803686 /* Framework-iOSTests */,
+				846A7BCA1FDA9D2200803686 /* Framework-tvOSTests */,
 				846A7B841FDA9CCA00803686 /* Products */,
 				844F44861FDAA3AE0043F96A /* Frameworks */,
 			);
@@ -183,45 +193,45 @@
 			isa = PBXGroup;
 			children = (
 				846A7BA21FDA9CF300803686 /* RxUserDefaults.framework */,
-				846A7BAA1FDA9CF300803686 /* RxUserDefaults-iOSTests.xctest */,
-				846A7BBE1FDA9D2200803686 /* RxUserDefaults.framework */,
-				846A7BC61FDA9D2200803686 /* RxUserDefaults-tvOSTests.xctest */,
+				846A7BAA1FDA9CF300803686 /* Framework-iOSTests.xctest */,
+				846A7BBE1FDA9D2200803686 /* Framework.framework */,
+				846A7BC61FDA9D2200803686 /* Framework-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		846A7BA31FDA9CF300803686 /* RxUserDefaults-iOS */ = {
+		846A7BA31FDA9CF300803686 /* Framework-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				846A7BA41FDA9CF300803686 /* RxUserDefaults_iOS.h */,
+				846A7BA41FDA9CF300803686 /* Framework_iOS.h */,
 				846A7BA51FDA9CF300803686 /* Info.plist */,
 			);
-			path = "RxUserDefaults-iOS";
+			path = "Framework-iOS";
 			sourceTree = "<group>";
 		};
-		846A7BAE1FDA9CF300803686 /* RxUserDefaults-iOSTests */ = {
+		846A7BAE1FDA9CF300803686 /* Framework-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
 				846A7BB11FDA9CF300803686 /* Info.plist */,
 			);
-			path = "RxUserDefaults-iOSTests";
+			path = "Framework-iOSTests";
 			sourceTree = "<group>";
 		};
-		846A7BBF1FDA9D2200803686 /* RxUserDefaults-tvOS */ = {
+		846A7BBF1FDA9D2200803686 /* Framework-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				846A7BC01FDA9D2200803686 /* RxUserDefaults_tvOS.h */,
+				846A7BC01FDA9D2200803686 /* Framework_tvOS.h */,
 				846A7BC11FDA9D2200803686 /* Info.plist */,
 			);
-			path = "RxUserDefaults-tvOS";
+			path = "Framework-tvOS";
 			sourceTree = "<group>";
 		};
-		846A7BCA1FDA9D2200803686 /* RxUserDefaults-tvOSTests */ = {
+		846A7BCA1FDA9D2200803686 /* Framework-tvOSTests */ = {
 			isa = PBXGroup;
 			children = (
 				846A7BCD1FDA9D2200803686 /* Info.plist */,
 			);
-			path = "RxUserDefaults-tvOSTests";
+			path = "Framework-tvOSTests";
 			sourceTree = "<group>";
 		};
 		846A7BDA1FDA9E6900803686 /* Sources */ = {
@@ -239,7 +249,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846A7BB21FDA9CF400803686 /* RxUserDefaults_iOS.h in Headers */,
+				846A7BB21FDA9CF400803686 /* Framework_iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,16 +257,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846A7BCE1FDA9D2200803686 /* RxUserDefaults_tvOS.h in Headers */,
+				846A7BCE1FDA9D2200803686 /* Framework_tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		846A7BA11FDA9CF300803686 /* RxUserDefaults-iOS */ = {
+		846A7BA11FDA9CF300803686 /* Framework-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 846A7BB31FDA9CF400803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-iOS" */;
+			buildConfigurationList = 846A7BB31FDA9CF400803686 /* Build configuration list for PBXNativeTarget "Framework-iOS" */;
 			buildPhases = (
 				846A7B9D1FDA9CF300803686 /* Sources */,
 				846A7B9E1FDA9CF300803686 /* Frameworks */,
@@ -267,14 +277,14 @@
 			);
 			dependencies = (
 			);
-			name = "RxUserDefaults-iOS";
-			productName = "RxUserDefaults-iOS";
+			name = "Framework-iOS";
+			productName = "Framework-iOS";
 			productReference = 846A7BA21FDA9CF300803686 /* RxUserDefaults.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		846A7BA91FDA9CF300803686 /* RxUserDefaults-iOSTests */ = {
+		846A7BA91FDA9CF300803686 /* Framework-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 846A7BB61FDA9CF400803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-iOSTests" */;
+			buildConfigurationList = 846A7BB61FDA9CF400803686 /* Build configuration list for PBXNativeTarget "Framework-iOSTests" */;
 			buildPhases = (
 				846A7BA61FDA9CF300803686 /* Sources */,
 				846A7BA71FDA9CF300803686 /* Frameworks */,
@@ -285,14 +295,14 @@
 			dependencies = (
 				846A7BAD1FDA9CF300803686 /* PBXTargetDependency */,
 			);
-			name = "RxUserDefaults-iOSTests";
-			productName = "RxUserDefaults-iOSTests";
-			productReference = 846A7BAA1FDA9CF300803686 /* RxUserDefaults-iOSTests.xctest */;
+			name = "Framework-iOSTests";
+			productName = "Framework-iOSTests";
+			productReference = 846A7BAA1FDA9CF300803686 /* Framework-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		846A7BBD1FDA9D2200803686 /* RxUserDefaults-tvOS */ = {
+		846A7BBD1FDA9D2200803686 /* Framework-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 846A7BCF1FDA9D2200803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-tvOS" */;
+			buildConfigurationList = 846A7BCF1FDA9D2200803686 /* Build configuration list for PBXNativeTarget "Framework-tvOS" */;
 			buildPhases = (
 				846A7BB91FDA9D2200803686 /* Sources */,
 				846A7BBA1FDA9D2200803686 /* Frameworks */,
@@ -303,14 +313,14 @@
 			);
 			dependencies = (
 			);
-			name = "RxUserDefaults-tvOS";
-			productName = "RxUserDefaults-tvOS";
-			productReference = 846A7BBE1FDA9D2200803686 /* RxUserDefaults.framework */;
+			name = "Framework-tvOS";
+			productName = "Framework-tvOS";
+			productReference = 846A7BBE1FDA9D2200803686 /* Framework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		846A7BC51FDA9D2200803686 /* RxUserDefaults-tvOSTests */ = {
+		846A7BC51FDA9D2200803686 /* Framework-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 846A7BD21FDA9D2200803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-tvOSTests" */;
+			buildConfigurationList = 846A7BD21FDA9D2200803686 /* Build configuration list for PBXNativeTarget "Framework-tvOSTests" */;
 			buildPhases = (
 				846A7BC21FDA9D2200803686 /* Sources */,
 				846A7BC31FDA9D2200803686 /* Frameworks */,
@@ -322,9 +332,9 @@
 			dependencies = (
 				846A7BC91FDA9D2200803686 /* PBXTargetDependency */,
 			);
-			name = "RxUserDefaults-tvOSTests";
-			productName = "RxUserDefaults-tvOSTests";
-			productReference = 846A7BC61FDA9D2200803686 /* RxUserDefaults-tvOSTests.xctest */;
+			name = "Framework-tvOSTests";
+			productName = "Framework-tvOSTests";
+			productReference = 846A7BC61FDA9D2200803686 /* Framework-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -355,7 +365,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 846A7B7D1FDA9CC900803686 /* Build configuration list for PBXProject "RxUserDefaults" */;
+			buildConfigurationList = 846A7B7D1FDA9CC900803686 /* Build configuration list for PBXProject "Framework" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -367,10 +377,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				846A7BA11FDA9CF300803686 /* RxUserDefaults-iOS */,
-				846A7BA91FDA9CF300803686 /* RxUserDefaults-iOSTests */,
-				846A7BBD1FDA9D2200803686 /* RxUserDefaults-tvOS */,
-				846A7BC51FDA9D2200803686 /* RxUserDefaults-tvOSTests */,
+				846A7BA11FDA9CF300803686 /* Framework-iOS */,
+				846A7BA91FDA9CF300803686 /* Framework-iOSTests */,
+				846A7BBD1FDA9D2200803686 /* Framework-tvOS */,
+				846A7BC51FDA9D2200803686 /* Framework-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -437,12 +447,12 @@
 /* Begin PBXTargetDependency section */
 		846A7BAD1FDA9CF300803686 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 846A7BA11FDA9CF300803686 /* RxUserDefaults-iOS */;
+			target = 846A7BA11FDA9CF300803686 /* Framework-iOS */;
 			targetProxy = 846A7BAC1FDA9CF300803686 /* PBXContainerItemProxy */;
 		};
 		846A7BC91FDA9D2200803686 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 846A7BBD1FDA9D2200803686 /* RxUserDefaults-tvOS */;
+			target = 846A7BBD1FDA9D2200803686 /* Framework-tvOS */;
 			targetProxy = 846A7BC81FDA9D2200803686 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -450,6 +460,7 @@
 /* Begin XCBuildConfiguration section */
 		846A7B951FDA9CCA00803686 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 844F44AA1FDABB1F0043F96A /* Framework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -510,6 +521,7 @@
 		};
 		846A7B961FDA9CCA00803686 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 844F44AA1FDABB1F0043F96A /* Framework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -574,11 +586,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-iOS/Info.plist";
+				INFOPLIST_FILE = "Framework-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = RxUserDefaults;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.${N42_FRAMEWORK_NAME}";
+				PRODUCT_NAME = "${N42_FRAMEWORK_NAME}";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -598,11 +610,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-iOS/Info.plist";
+				INFOPLIST_FILE = "Framework-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = RxUserDefaults;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.${N42_FRAMEWORK_NAME}";
+				PRODUCT_NAME = "${N42_FRAMEWORK_NAME}";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -618,9 +630,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Framework-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.RxUserDefaults-iOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.Framework-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -636,9 +648,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Framework-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.RxUserDefaults-iOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.Framework-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -658,11 +670,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-tvOS/Info.plist";
+				INFOPLIST_FILE = "Framework-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = RxUserDefaults;
+				PRODUCT_BUNDLE_IDENTIFIER = de.number42.Framework;
+				PRODUCT_NAME = Framework;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -684,11 +696,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-tvOS/Info.plist";
+				INFOPLIST_FILE = "Framework-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
-				PRODUCT_NAME = RxUserDefaults;
+				PRODUCT_BUNDLE_IDENTIFIER = de.number42.Framework;
+				PRODUCT_NAME = Framework;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -706,9 +718,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "Framework-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.RxUserDefaults-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.Framework-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
@@ -726,9 +738,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = "RxUserDefaults-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "Framework-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.RxUserDefaults-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.Framework-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
@@ -740,7 +752,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		846A7B7D1FDA9CC900803686 /* Build configuration list for PBXProject "RxUserDefaults" */ = {
+		846A7B7D1FDA9CC900803686 /* Build configuration list for PBXProject "Framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				846A7B951FDA9CCA00803686 /* Debug */,
@@ -749,7 +761,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		846A7BB31FDA9CF400803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-iOS" */ = {
+		846A7BB31FDA9CF400803686 /* Build configuration list for PBXNativeTarget "Framework-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				846A7BB41FDA9CF400803686 /* Debug */,
@@ -758,7 +770,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		846A7BB61FDA9CF400803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-iOSTests" */ = {
+		846A7BB61FDA9CF400803686 /* Build configuration list for PBXNativeTarget "Framework-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				846A7BB71FDA9CF400803686 /* Debug */,
@@ -767,7 +779,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		846A7BCF1FDA9D2200803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-tvOS" */ = {
+		846A7BCF1FDA9D2200803686 /* Build configuration list for PBXNativeTarget "Framework-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				846A7BD01FDA9D2200803686 /* Debug */,
@@ -776,7 +788,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		846A7BD21FDA9D2200803686 /* Build configuration list for PBXNativeTarget "RxUserDefaults-tvOSTests" */ = {
+		846A7BD21FDA9D2200803686 /* Build configuration list for PBXNativeTarget "Framework-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				846A7BD31FDA9D2200803686 /* Debug */,

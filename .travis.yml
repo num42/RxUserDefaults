@@ -9,6 +9,6 @@ before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 script:
 - carthage build --platforms ios,tvos
-- fastlane scan --scheme RxUserDefaults-iOS
-- fastlane scan --scheme RxUserDefaults-tvOS
+- fastlane scan --scheme Framework-iOS
+- fastlane scan --scheme Framework-tvOS
 - pod lib lint

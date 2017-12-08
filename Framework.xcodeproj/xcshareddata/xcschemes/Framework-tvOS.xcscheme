@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-               BuildableName = "RxUserDefaults.framework"
-               BlueprintName = "RxUserDefaults-iOS"
-               ReferencedContainer = "container:RxUserDefaults.xcodeproj">
+               BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
+               BuildableName = "Framework.framework"
+               BlueprintName = "Framework-tvOS"
+               ReferencedContainer = "container:Framework.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,20 +33,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "846A7BA91FDA9CF300803686"
-               BuildableName = "RxUserDefaults-iOSTests.xctest"
-               BlueprintName = "RxUserDefaults-iOSTests"
-               ReferencedContainer = "container:RxUserDefaults.xcodeproj">
+               BlueprintIdentifier = "846A7BC51FDA9D2200803686"
+               BuildableName = "Framework-tvOSTests.xctest"
+               BlueprintName = "Framework-tvOSTests"
+               ReferencedContainer = "container:Framework.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-            BuildableName = "RxUserDefaults.framework"
-            BlueprintName = "RxUserDefaults-iOS"
-            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
+            BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
+            BuildableName = "Framework.framework"
+            BlueprintName = "Framework-tvOS"
+            ReferencedContainer = "container:Framework.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,10 +66,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-            BuildableName = "RxUserDefaults.framework"
-            BlueprintName = "RxUserDefaults-iOS"
-            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
+            BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
+            BuildableName = "Framework.framework"
+            BlueprintName = "Framework-tvOS"
+            ReferencedContainer = "container:Framework.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,10 +84,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "846A7BA11FDA9CF300803686"
-            BuildableName = "RxUserDefaults.framework"
-            BlueprintName = "RxUserDefaults-iOS"
-            ReferencedContainer = "container:RxUserDefaults.xcodeproj">
+            BlueprintIdentifier = "846A7BBD1FDA9D2200803686"
+            BuildableName = "Framework.framework"
+            BlueprintName = "Framework-tvOS"
+            ReferencedContainer = "container:Framework.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
