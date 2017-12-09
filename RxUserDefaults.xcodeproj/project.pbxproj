@@ -82,7 +82,7 @@
 		846A7BA51FDA9CF300803686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846A7BAA1FDA9CF300803686 /* Framework-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A7BB11FDA9CF300803686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846A7BBE1FDA9D2200803686 /* Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A7BBE1FDA9D2200803686 /* RxUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A7BC01FDA9D2200803686 /* Framework_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Framework_tvOS.h; sourceTree = "<group>"; };
 		846A7BC11FDA9D2200803686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846A7BC61FDA9D2200803686 /* Framework-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +194,7 @@
 			children = (
 				846A7BA21FDA9CF300803686 /* RxUserDefaults.framework */,
 				846A7BAA1FDA9CF300803686 /* Framework-iOSTests.xctest */,
-				846A7BBE1FDA9D2200803686 /* Framework.framework */,
+				846A7BBE1FDA9D2200803686 /* RxUserDefaults.framework */,
 				846A7BC61FDA9D2200803686 /* Framework-tvOSTests.xctest */,
 			);
 			name = Products;
@@ -315,7 +315,7 @@
 			);
 			name = "Framework-tvOS";
 			productName = "Framework-tvOS";
-			productReference = 846A7BBE1FDA9D2200803686 /* Framework.framework */;
+			productReference = 846A7BBE1FDA9D2200803686 /* RxUserDefaults.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		846A7BC51FDA9D2200803686 /* Framework-tvOSTests */ = {
@@ -661,6 +661,7 @@
 		};
 		846A7BD01FDA9D2200803686 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 844F44AA1FDABB1F0043F96A /* Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -675,8 +676,8 @@
 				INFOPLIST_FILE = "Framework-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.number42.Framework;
-				PRODUCT_NAME = Framework;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.${N42_FRAMEWORK_NAME}";
+				PRODUCT_NAME = "${N42_FRAMEWORK_NAME}";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -687,6 +688,7 @@
 		};
 		846A7BD11FDA9D2200803686 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 844F44AA1FDABB1F0043F96A /* Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -701,8 +703,8 @@
 				INFOPLIST_FILE = "Framework-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.number42.Framework;
-				PRODUCT_NAME = Framework;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.number42.${N42_FRAMEWORK_NAME}";
+				PRODUCT_NAME = "${N42_FRAMEWORK_NAME}";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
