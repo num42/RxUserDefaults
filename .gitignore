@@ -35,3 +35,5 @@ Pods/
 /Carthage
 /Example/build
 UserInterfaceState.xcuserstate
+/test_output
+/fastlane/test_output
