@@ -1,7 +1,8 @@
 import XCTest
 import RxUserDefaults
 import RxSwift
-
+import RxTest
+import RxBlocking
 
 class Tests: XCTestCase {
 
@@ -197,35 +198,46 @@ class Tests: XCTestCase {
 
     func testRxSetting() {
 
-        let expectation = self.expectation(description: "values observed")
-
+        let scheduler = TestScheduler(initialClock: 0)
         let setting = settings.setting(key: "rx_test", defaultValue: "nothing")
 
+        let result = scheduler.start { () -> Observable<String> in
+            
+            _ = scheduler.createHotObservable([next(500, ())]).subscribe(onNext: { _ in
+                
+                // set two values
+                setting.value = "string_value_1"
+                setting.value = "string_value_2"
+                
+                // set a value directly
+                self.userDefaults.set("string_value_3", forKey: "rx_test")
+                
+                // remove a value
+                setting.remove()
+                
+            })
+            
+            return setting.asObservable()
+        }
+        
+        let rawResult = try! Observable.from(result.events).map { event -> String in
+            event.value.element!
+            }.toBlocking().toArray()
 
-        _ = setting.asObservable().debug().take(5).toArray().subscribe(onNext: { (values) in
-
-            // check the sequence
-            XCTAssertEqual(values, ["nothing", "string_value_1", "string_value_2","string_value_3","nothing"])
-
-            // release the semaphore
-            expectation.fulfill()
-
-            }, onError: { _ in
-                XCTFail()
-            }, onCompleted: nil, onDisposed: nil)
-
-        // set two values
-        setting.value = "string_value_1"
-        setting.value = "string_value_2"
-
-        // set a value directly
-        userDefaults.set("string_value_3", forKey: "rx_test")
-
-        // remove a value
-        setting.remove()
-
-
-        waitForExpectations(timeout: 10)
+        // TODO: seems like some ios versions have problems with KVO, see: https://github.com/ReactiveX/RxSwift/issues/1143
+        // KVO sends duplicate messages on some ios versions so we have to build a special check
+        if rawResult.count == 8 {
+            XCTAssertEqual( rawResult, ["nothing",
+                                        "string_value_1", "string_value_1", "string_value_2","string_value_2", "string_value_3", "string_value_3",
+                                        "nothing"])
+        } else if rawResult.count == 5 {
+            XCTAssertEqual( rawResult, ["nothing",
+                                        "string_value_1", "string_value_2","string_value_3",
+                                        "nothing"])
+        } else {
+            XCTFail()
+        }
+        
 
     }
     
@@ -240,56 +252,50 @@ class Tests: XCTestCase {
             
         }
         
-        let expectation = self.expectation(description: "values observed")
+        
+        let scheduler = TestScheduler(initialClock: 0)
         let setting = settings.setting(key: "rx_enum_test", defaultValue: TestEnum.defaultValue)
         
-        _ = setting.asObservable().debug().map { value in
-                return value.rawValue
-            } .take(5).toArray().subscribe(onNext: { (values) in
+        let result = scheduler.start { () -> Observable<TestEnum> in
             
-            // check the sequence
-            XCTAssertEqual( values, [TestEnum.defaultValue.rawValue, TestEnum.test0.rawValue, TestEnum.test1.rawValue, TestEnum.test2.rawValue, TestEnum.defaultValue.rawValue])
+            _ = scheduler.createHotObservable([next(500, ())]).subscribe(onNext: { _ in
+                
+                // set two values
+                setting.value = .test0
+                setting.value = .test1
+                
+                // set a value directly
+                self.userDefaults.set(TestEnum.test2.rawValue, forKey: "rx_enum_test")
+                
+                // remove a value
+                setting.remove()
+            })
             
-            // release the semaphore
-            expectation.fulfill()
-            
-            }, onError: { _ in
-                XCTFail()
-            }, onCompleted: nil, onDisposed: nil)
+            return setting.asObservable()
+        }
         
-        // set two values
-        setting.value = .test0
-        setting.value = .test1
         
-        // set a value directly
-        userDefaults.set(TestEnum.test2.rawValue, forKey: "rx_enum_test")
+        let rawResult = try! Observable.from(result.events).map { event -> TestEnum in
+            event.value.element!
+            }.toBlocking().toArray()
         
-        // remove a value
-        setting.remove()
         
-        waitForExpectations(timeout: 10)
+        // TODO: seems like some ios versions have problems with KVO, see: https://github.com/ReactiveX/RxSwift/issues/1143
+        // KVO sends duplicate messages on some ios versions so we have to build a special check
+        if rawResult.count == 8 {
+            XCTAssertEqual( rawResult, [.defaultValue,
+                                        .test0, .test0, .test1, .test1, .test2, .test2,
+                                        .defaultValue])
+        } else if rawResult.count == 5 {
+            XCTAssertEqual( rawResult, [.defaultValue,
+                                        .test0, .test1, .test2,
+                                        .defaultValue])
+        } else {
+            XCTFail()
+        }
+    
         
     }
-
-// TODO: figure out how to create an error when using unsupported types
-//    func testUnsupportedType() {
-//
-//        struct Unsupported: RxSettingCompatible {
-//            func toPersistedValue() -> Any {
-//                return self
-//            }
-//
-//            static func fromPersistedValue(value:Any) -> Unsupported {
-//                return value as! Unsupported
-//            }
-//        }
-//
-//        let setting = Setting<Unsupported>(userDefaults: userDefaults, key: "unsupported_test", defaultValue: Unsupported())
-//
-//        setting.value = Unsupported()
-//
-//        
-//    }
 
 }
 
