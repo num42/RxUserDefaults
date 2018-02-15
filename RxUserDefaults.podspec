@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxUserDefaults'
-  s.version          = '0.1.1'
+  s.version          = '4.0.0'
   s.summary          = 'Wrapper for userDefaults with RxSwift support.'
 
   s.description      = "<<-DESC
@@ -17,15 +17,17 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/num42/RxUserDefaults'
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
-  s.author           = { 'David Kraus' => 'kraus.david.dev@gmail.com' }
+  s.author           = { 'David Kraus' => 'kraus.david.dev@gmail.com',
+                         'Hans-Martin Schuller' => 'hm.schuller@gmail.com',
+                         'Wolfgang Lutz' => 'wolfgang@lutz-wiesent.de' }
   s.source           = { :git => 'https://github.com/num42/RxUserDefaults.git', :tag => s.version.to_s }
- 
 
-  s.ios.deployment_target = '8.0'
-  s.tvos.deployment_target = '9.0'
 
-  s.source_files = 'RxUserDefaults/Classes/**/*'
-  
-  s.dependency 'RxSwift', '~> 3.0.0'
-  s.dependency 'RxCocoa', '~> 3.0.0'
+  s.ios.deployment_target = '9.3'
+  s.tvos.deployment_target = '9.2'
+
+  s.source_files = 'Sources/**/*'
+
+  s.dependency 'RxSwift', '~> 4.0'
+  s.dependency 'RxCocoa', '~> 4.0'
 end
