@@ -70,7 +70,7 @@ RxUserDefaults is available through:
 - [Carthage](https://github.com/Carthage/Carthage)
 To install, simply add the following line to your Cartfile:
 ```ruby
-github "num42/Carthage"
+github "num42/RxUserDefaults"
 ```
 
 - [CocoaPods](http://cocoapods.org)
