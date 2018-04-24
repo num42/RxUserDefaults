@@ -1,9 +1,0 @@
-//
-//  Framework.xcconfig
-//  Framework
-//
-//  Created by Wolfgang Lutz on 08.12.17.
-//  Copyright © 2017 Number42 GmbH. All rights reserved.
-//
-
-N42_FRAMEWORK_NAME = RxUserDefaults

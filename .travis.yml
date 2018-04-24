@@ -2,13 +2,17 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode9.2
+osx_image: xcode9.3
 language: objective-c
-# cache: cocoapods
+cache:
+  directories:
+  - Carthage
+  - /Users/travis/Library/Caches/carthage_cache
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 script:
 - carthage bootstrap --no-use-binaries --platform ios,tvos
-- fastlane scan --scheme Framework-iOS
-- fastlane scan --scheme Framework-tvOS
-- pod lib lint
+- fastlane scan --scheme RxUserDefaults_iOS
+- fastlane scan --scheme RxUserDefaults_tvOS
+- carthage build --no-skip-current --platform ios,tvos --cache-builds
+- pod lib lint  --allow-warnings

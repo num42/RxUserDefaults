@@ -1,0 +1,34 @@
+name: RxUserDefaults
+options:
+  usesTabs: false
+  indentWidth: 2
+  tabWidth: 2
+targets:
+  RxUserDefaults:
+    type: framework
+    platform: [iOS, tvOS]
+    scheme:
+      testTargets:
+        - RxUserDefaults-Tests_$platform
+    sources:
+      - Sources
+      - Supporting Files
+      - path: Headers
+        buildPhase: headers
+        type: folder
+        headerVisibility: public
+    dependencies:
+      - carthage: RxSwift
+      - carthage: RxCocoa
+  RxUserDefaults-Tests:
+    type: bundle.unit-test
+    platform: [iOS, tvOS]
+    scheme: {}
+    sources:
+      - Tests
+    dependencies:
+      - target: RxUserDefaults_$platform
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxTest
+      - carthage: RxBlocking

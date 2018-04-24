@@ -83,6 +83,21 @@ pod "RxUserDefaults"
 
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 
+## Project
+
+The xcodeproj file is generated using [xcodegen].
+
+To update it from the project.yml, run
+
+```shell
+xcodegen
+```
+
+or, if you are using [mint]
+
+```shell
+mint run yonaskolb/XcodeGen
+```
 
 ## Author
 
@@ -95,7 +110,7 @@ Wolfgang Lutz, wolfgang@lutz-wiesent.de
 License
 -------
 
-    Copyright 2016 Number42
+    Copyright 2018 Number42 GmbH
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -113,3 +128,5 @@ License
 [rx-preferences]: https://github.com/f2prateek/rx-preferences
 [wrap]: https://github.com/JohnSundell/Wrap
 [unbox]: https://github.com/JohnSundell/Unbox
+[xcodegen]: https://github.com/yonaskolb/XcodeGen
+[mint]: https://github.com/yonaskolb/Mint
