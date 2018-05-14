@@ -7,6 +7,9 @@ targets:
   RxUserDefaults:
     type: framework
     platform: [iOS, tvOS]
+    settings:
+      TVOS_DEPLOYMENT_TARGET: 9.2
+      IPHONEOS_DEPLOYMENT_TARGET: 9.3
     scheme:
       testTargets:
         - RxUserDefaults-Tests_$platform
