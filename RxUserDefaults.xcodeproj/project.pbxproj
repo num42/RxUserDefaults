@@ -435,6 +435,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
 				PRODUCT_NAME = RxUserDefaults;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -477,6 +478,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
 				PRODUCT_NAME = RxUserDefaults;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -504,6 +506,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
 				PRODUCT_NAME = RxUserDefaults;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -634,6 +637,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.number42.RxUserDefaults;
 				PRODUCT_NAME = RxUserDefaults;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

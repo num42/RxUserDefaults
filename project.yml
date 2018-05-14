@@ -10,6 +10,7 @@ targets:
     settings:
       TVOS_DEPLOYMENT_TARGET: 9.2
       IPHONEOS_DEPLOYMENT_TARGET: 9.3
+      PRODUCT_BUNDLE_IDENTIFIER: "de.number42.RxUserDefaults"
     scheme:
       testTargets:
         - RxUserDefaults-Tests_$platform
