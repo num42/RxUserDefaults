@@ -2,7 +2,7 @@ PODS:
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
-  - RxUserDefaults (4.0.0):
+  - RxUserDefaults (4.1.0):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
 
@@ -22,7 +22,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
-  RxUserDefaults: 65674cadc2abce3fed312d5d3cbbc057d86b43d4
+  RxUserDefaults: 563097e8f0f4b033103bd8a04392fbeafff3cab2
 
 PODFILE CHECKSUM: ed5e45db13ef4964710e069d8db3d42c65bc6ede
 

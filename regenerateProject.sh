@@ -1,1 +1,1 @@
-mint run yonaskolb/xcodegen "xcodegen project.yml"
+mint run yonaskolb/xcodegen
