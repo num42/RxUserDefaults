@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxUserDefaults'
-  s.version          = '4.0.0'
+  s.version          = '4.1.0'
   s.summary          = 'Wrapper for userDefaults with RxSwift support.'
 
   s.description      = "<<-DESC
