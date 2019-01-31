@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NT_7450A5209F2932DC40CDB94DF963F9FE"
+               BlueprintIdentifier = "60092EECF7A34F69A2DD2CA15B787155"
                BuildableName = "RxUserDefaults-Tests.xctest"
                BlueprintName = "RxUserDefaults-Tests_tvOS"
                ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_7450A5209F2932DC40CDB94DF963F9FE"
+            BlueprintIdentifier = "60092EECF7A34F69A2DD2CA15B787155"
             BuildableName = "RxUserDefaults-Tests.xctest"
             BlueprintName = "RxUserDefaults-Tests_tvOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -57,7 +57,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_7450A5209F2932DC40CDB94DF963F9FE"
+            BlueprintIdentifier = "60092EECF7A34F69A2DD2CA15B787155"
             BuildableName = "RxUserDefaults-Tests.xctest"
             BlueprintName = "RxUserDefaults-Tests_tvOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -78,7 +78,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_7450A5209F2932DC40CDB94DF963F9FE"
+            BlueprintIdentifier = "60092EECF7A34F69A2DD2CA15B787155"
             BuildableName = "RxUserDefaults-Tests.xctest"
             BlueprintName = "RxUserDefaults-Tests_tvOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">

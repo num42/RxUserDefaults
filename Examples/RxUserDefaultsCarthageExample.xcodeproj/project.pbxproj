@@ -3,123 +3,123 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF_4ED5E50F533CC78F5761E37F18905713 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_3AD5972D71D1789FA12DBD022CF4E948 /* RxSwift.framework */; };
-		BF_6504E7A135CDC3168EF435791A9D677B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_B76829F64B96422D521A9C880CA70CC0 /* LaunchScreen.storyboard */; };
-		BF_7EB4CEF37B62A35BD52A20B02AB48C16 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_2ECD63BC3AACD7252FBDE7B5CA1C9529 /* RxCocoa.framework */; };
-		BF_7F77E33E766B6E8B1C6472F1B798F714 /* RxUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_75056396E6DBDD77C37030270BA8A685 /* RxUserDefaults.framework */; };
-		BF_8EE40B967A5BCCE5735B09FBE8F3D274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FR_32D1F8AC13B6091EB67BD1D83B9D22FA /* Main.storyboard */; };
-		BF_B425DD600AA16EA10C8D4BE33DFF0624 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_83EA1A86E5967498F61FF5BD4B8F9849 /* ViewController.swift */; };
-		BF_B9994234D2BA93CBA872D106DCC4E72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_8661D374C91A792777FB0416E4E26690 /* Assets.xcassets */; };
-		BF_D22C15D645357D8D0D3137387A571948 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A7678547456AB8E6D93C0A2F81993097 /* AppDelegate.swift */; };
+		0B9F188B445233E6C49622DAB864D21A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5652B22DEFF633C8E38B7B87F5F70B8 /* RxSwift.framework */; };
+		0DD8FF55D0BA600B3E51CA4E992D0A13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF5A35310A81FEC1C6986812F46CA8 /* ViewController.swift */; };
+		2CCABFB1F4C9C1D9FC753CB4052B8599 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAE2B28F9FF90E0B63F77A4AA35EA2C /* RxCocoa.framework */; };
+		4225C242F6143B31F3498E024B5D517A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A12F58ACD3B5671B80DC40ACC1EB040 /* Assets.xcassets */; };
+		8920D5C3A7B3D50E0303326BE7934724 /* RxUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4660361BEAD6CA23A4DBEC3B2702F393 /* RxUserDefaults.framework */; };
+		9BA314BEF6DE130DB81FE122806B4F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C570F9CAC85AAF99FC93164809861AD /* Main.storyboard */; };
+		BE50D56F9891267B2ABBE4DDBDCCC2B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D396150316D990E655233D339B950BEF /* AppDelegate.swift */; };
+		DBD46A19F69C4F079ECBC923390C3196 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23DC0159B3F22A6AAADAEF75B647D9F5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FR_2ECD63BC3AACD7252FBDE7B5CA1C9529 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
-		FR_32D1F8AC13B6091EB67BD1D83B9D22FA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		FR_3AD5972D71D1789FA12DBD022CF4E948 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
-		FR_3C155F63D45F69AEBD8FE8614AE49FF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FR_47FD98EA93423802BBB9829336E7EB70 /* RxUserDefaultsCarthageExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = RxUserDefaultsCarthageExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_75056396E6DBDD77C37030270BA8A685 /* RxUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxUserDefaults.framework; sourceTree = "<group>"; };
-		FR_83EA1A86E5967498F61FF5BD4B8F9849 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FR_8661D374C91A792777FB0416E4E26690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FR_A7678547456AB8E6D93C0A2F81993097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FR_FA4BE1BD3F11313D35828AF8BFBCEAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A12F58ACD3B5671B80DC40ACC1EB040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C4272E1D7C5813387C620B0BB63EED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BAE2B28F9FF90E0B63F77A4AA35EA2C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
+		4660361BEAD6CA23A4DBEC3B2702F393 /* RxUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxUserDefaults.framework; sourceTree = "<group>"; };
+		4C570F9CAC85AAF99FC93164809861AD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		97EF5A35310A81FEC1C6986812F46CA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5652B22DEFF633C8E38B7B87F5F70B8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
+		B90345B8500170F4FE562641FD1B0847 /* RxUserDefaultsCarthageExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = RxUserDefaultsCarthageExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D396150316D990E655233D339B950BEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECE8F3D93770785B90225144857554C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FBP_71F0C8E125F625C460A5254AC01A7F6D /* Frameworks */ = {
+		EDF5131DB2462FBD994DB94FF588F844 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_4ED5E50F533CC78F5761E37F18905713 /* RxSwift.framework in Frameworks */,
-				BF_7EB4CEF37B62A35BD52A20B02AB48C16 /* RxCocoa.framework in Frameworks */,
-				BF_7F77E33E766B6E8B1C6472F1B798F714 /* RxUserDefaults.framework in Frameworks */,
+				0B9F188B445233E6C49622DAB864D21A /* RxSwift.framework in Frameworks */,
+				2CCABFB1F4C9C1D9FC753CB4052B8599 /* RxCocoa.framework in Frameworks */,
+				8920D5C3A7B3D50E0303326BE7934724 /* RxUserDefaults.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		G_0941518735E3AB4B3100AA8550A78775 /* Carthage */ = {
+		03CA7621433B2D99332B9C0940642ED7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				G_2B4CDD68D47B811618E9E30EEA6578B5 /* iOS */,
+				2BAE2B28F9FF90E0B63F77A4AA35EA2C /* RxCocoa.framework */,
+				B5652B22DEFF633C8E38B7B87F5F70B8 /* RxSwift.framework */,
+				4660361BEAD6CA23A4DBEC3B2702F393 /* RxUserDefaults.framework */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		2B6D99B82C3D34C9FF6B8AB2DA268BCC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D396150316D990E655233D339B950BEF /* AppDelegate.swift */,
+				97EF5A35310A81FEC1C6986812F46CA8 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4A31DFD6F544DC2BE389ED63543D5067 = {
+			isa = PBXGroup;
+			children = (
+				2B6D99B82C3D34C9FF6B8AB2DA268BCC /* Sources */,
+				E6A39D34B7E90AC8FDD5953FB166FA6C /* Supporting Files */,
+				89BA631D7A17DAC8A0B24CDEA34349BB /* Frameworks */,
+				CE333ADB48AECFCA2209CB807B8816F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89BA631D7A17DAC8A0B24CDEA34349BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB6AB0A96DC8B2802597EEABBF109AFE /* Carthage */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE333ADB48AECFCA2209CB807B8816F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B90345B8500170F4FE562641FD1B0847 /* RxUserDefaultsCarthageExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB6AB0A96DC8B2802597EEABBF109AFE /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				03CA7621433B2D99332B9C0940642ED7 /* iOS */,
 			);
 			name = Carthage;
 			path = Carthage/Build;
 			sourceTree = "<group>";
 		};
-		G_0AD59DEE87815CD300210C9537F47468 /* Products */ = {
+		E6A39D34B7E90AC8FDD5953FB166FA6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FR_47FD98EA93423802BBB9829336E7EB70 /* RxUserDefaultsCarthageExample.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		G_2B4CDD68D47B811618E9E30EEA6578B5 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				FR_2ECD63BC3AACD7252FBDE7B5CA1C9529 /* RxCocoa.framework */,
-				FR_3AD5972D71D1789FA12DBD022CF4E948 /* RxSwift.framework */,
-				FR_75056396E6DBDD77C37030270BA8A685 /* RxUserDefaults.framework */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		G_336CE65410ED896058A0F739E31D16E1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				G_0941518735E3AB4B3100AA8550A78775 /* Carthage */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		G_359118F7C06ADE980F531753B430B24A /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				FR_A7678547456AB8E6D93C0A2F81993097 /* AppDelegate.swift */,
-				FR_83EA1A86E5967498F61FF5BD4B8F9849 /* ViewController.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		G_3DF581D8CF33A3ABA882BA2556FC6812 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FR_8661D374C91A792777FB0416E4E26690 /* Assets.xcassets */,
-				FR_3C155F63D45F69AEBD8FE8614AE49FF0 /* Info.plist */,
-				VG_B76829F64B96422D521A9C880CA70CC0 /* LaunchScreen.storyboard */,
-				FR_32D1F8AC13B6091EB67BD1D83B9D22FA /* Main.storyboard */,
+				1A12F58ACD3B5671B80DC40ACC1EB040 /* Assets.xcassets */,
+				ECE8F3D93770785B90225144857554C5 /* Info.plist */,
+				23DC0159B3F22A6AAADAEF75B647D9F5 /* LaunchScreen.storyboard */,
+				4C570F9CAC85AAF99FC93164809861AD /* Main.storyboard */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		G_E3838D3FAB22F709511D7811F34F903F = {
-			isa = PBXGroup;
-			children = (
-				G_359118F7C06ADE980F531753B430B24A /* Sources */,
-				G_3DF581D8CF33A3ABA882BA2556FC6812 /* Supporting Files */,
-				G_336CE65410ED896058A0F739E31D16E1 /* Frameworks */,
-				G_0AD59DEE87815CD300210C9537F47468 /* Products */,
-			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		NT_D9D73D1545497A0A738C4DED64082039 /* RxUserDefaultsCarthageExample */ = {
+		9C888E81FB7FC247E81FB6C7E8FC0902 /* RxUserDefaultsCarthageExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CL_7A557FF921305D1DBD77B35E63FBB739 /* Build configuration list for PBXNativeTarget "RxUserDefaultsCarthageExample" */;
+			buildConfigurationList = 76FB85457740F2D2DB5799D5F177886A /* Build configuration list for PBXNativeTarget "RxUserDefaultsCarthageExample" */;
 			buildPhases = (
-				SBP_B02978612CD6EE227F2125A80CF3D419 /* Sources */,
-				RBP_334A7C918F5CAA4C293ECE5CABBED7A7 /* Resources */,
-				FBP_71F0C8E125F625C460A5254AC01A7F6D /* Frameworks */,
-				SSBP_C3C2E3763B0EB1A6A0A84556CFC32044 /* Carthage */,
+				79A20E704F9A79DD52720BC667BB97D3 /* Sources */,
+				0CF13E7873BED5AFC35D5ED96C84BC08 /* Resources */,
+				4AF1236307177387A12936AD05823F64 /* Carthage */,
+				EDF5131DB2462FBD994DB94FF588F844 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,48 +127,48 @@
 			);
 			name = RxUserDefaultsCarthageExample;
 			productName = RxUserDefaultsCarthageExample;
-			productReference = FR_47FD98EA93423802BBB9829336E7EB70 /* RxUserDefaultsCarthageExample.app */;
+			productReference = B90345B8500170F4FE562641FD1B0847 /* RxUserDefaultsCarthageExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		P_83D06712E040698FA75E43176DE9F61B /* Project object */ = {
+		EEC676C75D0E23BEC1062B13E5A0A165 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1000;
 			};
-			buildConfigurationList = CL_4AF0B9A5709CADC4B2C16B35C61D816F /* Build configuration list for PBXProject "RxUserDefaultsCarthageExample" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = 1F9AD3366CFC714F3FC17BCD786F98B2 /* Build configuration list for PBXProject "RxUserDefaultsCarthageExample" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
 			);
-			mainGroup = G_E3838D3FAB22F709511D7811F34F903F;
+			mainGroup = 4A31DFD6F544DC2BE389ED63543D5067;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				NT_D9D73D1545497A0A738C4DED64082039 /* RxUserDefaultsCarthageExample */,
+				9C888E81FB7FC247E81FB6C7E8FC0902 /* RxUserDefaultsCarthageExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		RBP_334A7C918F5CAA4C293ECE5CABBED7A7 /* Resources */ = {
+		0CF13E7873BED5AFC35D5ED96C84BC08 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_B9994234D2BA93CBA872D106DCC4E72E /* Assets.xcassets in Resources */,
-				BF_6504E7A135CDC3168EF435791A9D677B /* LaunchScreen.storyboard in Resources */,
-				BF_8EE40B967A5BCCE5735B09FBE8F3D274 /* Main.storyboard in Resources */,
+				4225C242F6143B31F3498E024B5D517A /* Assets.xcassets in Resources */,
+				DBD46A19F69C4F079ECBC923390C3196 /* LaunchScreen.storyboard in Resources */,
+				9BA314BEF6DE130DB81FE122806B4F23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		SSBP_C3C2E3763B0EB1A6A0A84556CFC32044 /* Carthage */ = {
+		4AF1236307177387A12936AD05823F64 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,22 +191,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		SBP_B02978612CD6EE227F2125A80CF3D419 /* Sources */ = {
+		79A20E704F9A79DD52720BC667BB97D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_D22C15D645357D8D0D3137387A571948 /* AppDelegate.swift in Sources */,
-				BF_B425DD600AA16EA10C8D4BE33DFF0624 /* ViewController.swift in Sources */,
+				BE50D56F9891267B2ABBE4DDBDCCC2B3 /* AppDelegate.swift in Sources */,
+				0DD8FF55D0BA600B3E51CA4E992D0A13 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		VG_B76829F64B96422D521A9C880CA70CC0 /* LaunchScreen.storyboard */ = {
+		23DC0159B3F22A6AAADAEF75B647D9F5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FR_FA4BE1BD3F11313D35828AF8BFBCEAC1 /* Base */,
+				1C4272E1D7C5813387C620B0BB63EED3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BC_4F859FCB96B70770C417DFCEA1CF383D /* Debug */ = {
+		09E6963CCEED2C2A64C7D1E6027125FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -273,7 +273,7 @@
 			};
 			name = Debug;
 		};
-		BC_AC4CAFAC2CEF44F6072B537E5030262B /* Release */ = {
+		17F6A0149D15AF6FCF64F7013F04B7D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -290,9 +290,9 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Release;
+			name = Debug;
 		};
-		BC_BED3E119B5E5DBE20CC26C8158D7E2A7 /* Release */ = {
+		1F9DD876CC154AC61E3D8B7EFFF9888A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,7 +343,7 @@
 			};
 			name = Release;
 		};
-		BC_E3AFE239A5395DF0BBF40924D7FDEF2F /* Debug */ = {
+		C39C21D4A6FFDF16D23B184D8EC9F9A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -360,30 +360,30 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CL_4AF0B9A5709CADC4B2C16B35C61D816F /* Build configuration list for PBXProject "RxUserDefaultsCarthageExample" */ = {
+		1F9AD3366CFC714F3FC17BCD786F98B2 /* Build configuration list for PBXProject "RxUserDefaultsCarthageExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC_4F859FCB96B70770C417DFCEA1CF383D /* Debug */,
-				BC_BED3E119B5E5DBE20CC26C8158D7E2A7 /* Release */,
+				09E6963CCEED2C2A64C7D1E6027125FD /* Debug */,
+				1F9DD876CC154AC61E3D8B7EFFF9888A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		CL_7A557FF921305D1DBD77B35E63FBB739 /* Build configuration list for PBXNativeTarget "RxUserDefaultsCarthageExample" */ = {
+		76FB85457740F2D2DB5799D5F177886A /* Build configuration list for PBXNativeTarget "RxUserDefaultsCarthageExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC_E3AFE239A5395DF0BBF40924D7FDEF2F /* Debug */,
-				BC_AC4CAFAC2CEF44F6072B537E5030262B /* Release */,
+				17F6A0149D15AF6FCF64F7013F04B7D4 /* Debug */,
+				C39C21D4A6FFDF16D23B184D8EC9F9A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "";
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = P_83D06712E040698FA75E43176DE9F61B /* Project object */;
+	rootObject = EEC676C75D0E23BEC1062B13E5A0A165 /* Project object */;
 }

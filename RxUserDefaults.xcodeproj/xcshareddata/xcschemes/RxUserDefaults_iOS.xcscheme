@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NT_BB925FE64FEB938D155001DA01E6EDAC"
+               BlueprintIdentifier = "002178748042D1D60E60D940044501E8"
                BuildableName = "RxUserDefaults.framework"
                BlueprintName = "RxUserDefaults_iOS"
                ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NT_4A624549E3B375F4101C191F7E5233F7"
+               BlueprintIdentifier = "2E8D8F280D2BC6679A813E7D23D7E3F1"
                BuildableName = "RxUserDefaults-Tests.xctest"
                BlueprintName = "RxUserDefaults-Tests_iOS"
                ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_BB925FE64FEB938D155001DA01E6EDAC"
+            BlueprintIdentifier = "002178748042D1D60E60D940044501E8"
             BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -66,7 +66,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_BB925FE64FEB938D155001DA01E6EDAC"
+            BlueprintIdentifier = "002178748042D1D60E60D940044501E8"
             BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -87,7 +87,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_BB925FE64FEB938D155001DA01E6EDAC"
+            BlueprintIdentifier = "002178748042D1D60E60D940044501E8"
             BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">

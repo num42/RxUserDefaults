@@ -1,1 +1,1 @@
-mint run yonaskolb/xcodegen
+mint run yonaskolb/XcodeGen xcodegen
