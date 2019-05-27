@@ -170,11 +170,11 @@ extension String: RxSettingCompatible {
 
 public extension RxSettingEnum where Self: RawRepresentable {
 
-    public func toPersistedValue() -> Any {
+    func toPersistedValue() -> Any {
         return self.rawValue
     }
 
-    public static func fromPersistedValue(value: Any) -> Self {
+    static func fromPersistedValue(value: Any) -> Self {
         return Self(rawValue: value as! RawValue)!
     }
 
