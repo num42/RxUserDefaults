@@ -1,0 +1,15 @@
+name: RxUserDefaultsCarthageExample
+options:
+  bundleIdPrefix: com.rxUserDefaults
+targets:
+  RxUserDefaultsCarthageExample:
+    type: application
+    platform: iOS
+    deploymentTarget: "12.0"
+    sources:
+      - Sources
+      - Supporting Files
+    dependencies:
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxUserDefaults
