@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NT_821432851781"
+               BlueprintIdentifier = "2E8D8F280D2BC6679A813E7D23D7E3F1"
                BuildableName = "RxUserDefaults-Tests.xctest"
                BlueprintName = "RxUserDefaults-Tests_iOS"
                ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_821432851781"
+            BlueprintIdentifier = "2E8D8F280D2BC6679A813E7D23D7E3F1"
             BuildableName = "RxUserDefaults-Tests.xctest"
             BlueprintName = "RxUserDefaults-Tests_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -57,7 +57,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_821432851781"
+            BlueprintIdentifier = "2E8D8F280D2BC6679A813E7D23D7E3F1"
             BuildableName = "RxUserDefaults-Tests.xctest"
             BlueprintName = "RxUserDefaults-Tests_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -78,7 +78,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_821432851781"
+            BlueprintIdentifier = "2E8D8F280D2BC6679A813E7D23D7E3F1"
             BuildableName = "RxUserDefaults-Tests.xctest"
             BlueprintName = "RxUserDefaults-Tests_iOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">

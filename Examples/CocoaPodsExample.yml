@@ -1,0 +1,13 @@
+name: RxUserDefaultsCocoaPodsExample
+options:
+  bundleIdPrefix: com.rxUserDefaults
+targets:
+  RxUserDefaultsCocoaPodsExample:
+    settings:
+      ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: $(inherited)
+    type: application
+    platform: iOS
+    deploymentTarget: "12.0"
+    sources:
+      - Sources
+      - Supporting Files

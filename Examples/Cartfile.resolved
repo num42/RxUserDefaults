@@ -1,0 +1,2 @@
+git "file:///Users/admin/dev/lib/RxUserDefaults" "4.0.0"
+github "ReactiveX/RxSwift" "4.4.0"

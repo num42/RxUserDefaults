@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NT_396615083738"
+               BlueprintIdentifier = "BC3B726748A24D180CC0281E8D230A0D"
                BuildableName = "RxUserDefaults.framework"
                BlueprintName = "RxUserDefaults_tvOS"
                ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NT_605858275112"
+               BlueprintIdentifier = "60092EECF7A34F69A2DD2CA15B787155"
                BuildableName = "RxUserDefaults-Tests.xctest"
                BlueprintName = "RxUserDefaults-Tests_tvOS"
                ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_396615083738"
+            BlueprintIdentifier = "BC3B726748A24D180CC0281E8D230A0D"
             BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_tvOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
@@ -63,16 +63,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_396615083738"
+            BlueprintIdentifier = "BC3B726748A24D180CC0281E8D230A0D"
             BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_tvOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <CommandLineArguments>
       </CommandLineArguments>
       <AdditionalOptions>
@@ -88,7 +87,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "NT_396615083738"
+            BlueprintIdentifier = "BC3B726748A24D180CC0281E8D230A0D"
             BuildableName = "RxUserDefaults.framework"
             BlueprintName = "RxUserDefaults_tvOS"
             ReferencedContainer = "container:RxUserDefaults.xcodeproj">
