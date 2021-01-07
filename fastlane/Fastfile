@@ -7,18 +7,18 @@ lane :podRelease do
     text: "Please edit the Podspec, update the Version number, save and press a key. Do not commit!",
     multi_line_end_keyword: "END"
   )
-
+  
   versionToRelease = prompt(
     text: "Version to Release (x.x.x): ",
     multi_line_end_keyword: "END"
   )
-
+  
   git_commit(path: "RxUserDefaults.podspec", message: "Release #{versionToRelease}")
-
+  
   add_git_tag(
     tag: "#{versionToRelease}"
   )
-
+  
   push_to_git_remote()
 
   sh ("cd ..; pod trunk register kraus.david.dev@gmail.com 'David Kraus' --description='macbook'")

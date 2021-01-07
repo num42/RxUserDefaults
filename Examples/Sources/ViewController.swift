@@ -9,6 +9,7 @@ class ViewController: UIViewController {
     
     lazy var valueLabel: UILabel = {
         let valueLabel = UILabel()
+        valueLabel.textColor = .blue
         return valueLabel
     }()
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
         textField.backgroundColor = .white
         textField.borderStyle = .line
         textField.text = "Enter new value here"
+        textField.textColor = .black
         return textField
     }()
     
@@ -75,14 +77,12 @@ class ViewController: UIViewController {
         saveButton.rx.tap
             .subscribe(onNext:
                 { [weak self] _ in
-                    guard let self = self else { return }
-                    
-                    guard let text = self.textField.text else {
-                        self.reactiveSetting.remove()
+                    guard let text = self?.textField.text else {
+                        self?.reactiveSetting.remove()
                         return
                     }
                     
-                    self.reactiveSetting.value = text
+                    self?.reactiveSetting.value = text
                 }
             )
             .disposed(by: disposeBag)
