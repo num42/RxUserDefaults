@@ -11,3 +11,11 @@ targets:
     sources:
       - Sources
       - Supporting Files
+
+configs:
+    Release:
+      SWIFT_COMPILATION_MODE: "wholemodule"
+      SWIFT_OPTIMIZATION_LEVEL: "-O" # -O (Optimize for Speed) is default in xcode 10.1
+    Debug:
+      SWIFT_COMPILATION_MODE: "Incremental"
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
