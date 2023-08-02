@@ -119,32 +119,32 @@ public protocol RxSettingCompatible {
 
 public protocol RxSettingEnum: RxSettingCompatible {}
 
-extension Int: RxSettingCompatible {
-  public func toPersistedValue() -> Any {
+public extension Int: RxSettingCompatible {
+  func toPersistedValue() -> Any {
     return self
   }
 
-  public static func fromPersistedValue(value: Any) -> Int {
+  static func fromPersistedValue(value: Any) -> Int {
     return value as! Int
   }
 }
 
-extension Bool: RxSettingCompatible {
-  public func toPersistedValue() -> Any {
+public extension Bool: RxSettingCompatible {
+  func toPersistedValue() -> Any {
     return self
   }
 
-  public static func fromPersistedValue(value: Any) -> Bool {
+  static func fromPersistedValue(value: Any) -> Bool {
     return value as! Bool
   }
 }
 
-extension String: RxSettingCompatible {
-  public func toPersistedValue() -> Any {
+public extension String: RxSettingCompatible {
+  func toPersistedValue() -> Any {
     return self
   }
 
-  public static func fromPersistedValue(value: Any) -> String {
+  static func fromPersistedValue(value: Any) -> String {
     return value as! String
   }
 }
@@ -159,23 +159,23 @@ public extension RxSettingEnum where Self: RawRepresentable {
   }
 }
 
-extension Array: RxSettingCompatible where Element: RxSettingCompatible {
-  public func toPersistedValue() -> Any {
+public extension Array: RxSettingCompatible where Element: RxSettingCompatible {
+  func toPersistedValue() -> Any {
     return map { $0.toPersistedValue() }
   }
 
-  public static func fromPersistedValue(value: Any) -> [Element] {
+  static func fromPersistedValue(value: Any) -> [Element] {
     return (value as! [Any]).map { Element.fromPersistedValue(value: $0) }
   }
 }
 
 // Set is not supported, work around with an array
-extension Set: RxSettingCompatible {
-  public func toPersistedValue() -> Any {
+public extension Set: RxSettingCompatible {
+  func toPersistedValue() -> Any {
     return Array(self)
   }
 
-  public static func fromPersistedValue(value: Any) -> Set<Element> {
+  static func fromPersistedValue(value: Any) -> Set<Element> {
     return Set(value as! [Element])
   }
 }
