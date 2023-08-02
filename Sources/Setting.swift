@@ -159,15 +159,14 @@ public extension RxSettingEnum where Self: RawRepresentable {
   }
 }
 
-extension Array: RxSettingCompatible {
+extension Array: RxSettingCompatible where Element: RxSettingCompatible {
+  public func toPersistedValue() -> Any {
+    return map { $0.toPersistedValue() }
+  }
 
-    public func toPersistedValue() -> Any {
-        return self
-    }
-
-    public static func fromPersistedValue(value: Any) -> Array<Element> {
-        return value as! Array<Element>
-    }
+  public static func fromPersistedValue(value: Any) -> [Element] {
+    return (value as! [Any]).map { Element.fromPersistedValue(value: $0) }
+  }
 }
 
 // Set is not supported, work around with an array
