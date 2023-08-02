@@ -179,3 +179,46 @@ extension Set: RxSettingCompatible {
     return Set(value as! [Element])
   }
 }
+
+public extension Double: RxSettingCompatible {
+  static func fromPersistedValue(value: Any) -> Double {
+    value as! Double
+  }
+
+  func toPersistedValue() -> Any {
+    self
+  }
+}
+
+public extension UUID: RxSettingCompatible {
+  static func fromPersistedValue(value: Any) -> UUID {
+    UUID(uuidString: value as! String)!
+  }
+
+  func toPersistedValue() -> Any {
+    uuidString
+  }
+}
+
+public extension Date: RxSettingCompatible {
+  func toPersistedValue() -> Any {
+    DateFormatter.iso8601.string(from: self)
+  }
+
+  static func fromPersistedValue(value: Any) -> Date {
+    DateFormatter.iso8601.date(from: value as! String)!
+  }
+}
+
+extension DateFormatter {
+  static var iso8601: DateFormatter {
+    let formatter = DateFormatter()
+
+    formatter.calendar = Calendar(identifier: .iso8601)
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+
+    return formatter
+  }
+}
