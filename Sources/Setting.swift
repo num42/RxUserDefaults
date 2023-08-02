@@ -15,170 +15,148 @@
  */
 
 import Foundation
-import RxSwift
 import RxCocoa
+import RxSwift
 
 public protocol StorageLayer {
+  func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T>
 
-    func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T>
+  func isSet(key: String) -> Bool
 
-    func isSet(key: String) -> Bool
+  func remove(key: String)
 
-    func remove(key: String)
+  func save<T: RxSettingCompatible>(value: T, key: String)
 
-    func save<T: RxSettingCompatible>(value: T, key: String)
-
-    func get<T: RxSettingCompatible>(key: String, defaultValue: T) -> T
+  func get<T: RxSettingCompatible>(key: String, defaultValue: T) -> T
 }
 
 public class UserDefaultsStorageLayer: StorageLayer {
+  public init(userDefaults: UserDefaults) {
+    self.userDefaults = userDefaults
+  }
 
-    let userDefaults: UserDefaults
+  public func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T> {
+    return userDefaults.rx.observe(T.self, key).map { _ -> T in
+      self.get(key: key, defaultValue: defaultValue)
+    }
+  }
 
-    public init(userDefaults: UserDefaults) {
-        self.userDefaults = userDefaults
+  public func isSet(key: String) -> Bool {
+    return userDefaults.dictionaryRepresentation().keys.contains(key)
+  }
+
+  public func remove(key: String) {
+    userDefaults.removeObject(forKey: key)
+  }
+
+  public func save<T: RxSettingCompatible>(value: T, key: String) {
+    let persValue = value.toPersistedValue()
+    userDefaults.set(persValue, forKey: key)
+  }
+
+  public func get<T: RxSettingCompatible>(key: String, defaultValue: T) -> T {
+    if isSet(key: key) {
+      return T.fromPersistedValue(value: userDefaults.value(forKey: key) as Any)
     }
 
+    return defaultValue
+  }
 
-    public func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T> {
-        return userDefaults.rx.observe(T.self, key).map({ _ -> T in
-            return self.get(key: key, defaultValue: defaultValue)
-        })
-    }
-
-    public func isSet(key: String) -> Bool {
-        return userDefaults.dictionaryRepresentation().keys.contains(key)
-    }
-
-    public func remove(key: String) {
-        userDefaults.removeObject(forKey: key)
-    }
-
-    public func save<T: RxSettingCompatible>(value: T, key: String) {
-        let persValue = value.toPersistedValue()
-        userDefaults.set(persValue, forKey: key)
-    }
-
-    public func get<T: RxSettingCompatible>(key: String, defaultValue: T) -> T {
-        if self.isSet(key: key) {
-          return T.fromPersistedValue(value: userDefaults.value(forKey: key) as Any)
-        }
-
-        return defaultValue
-    }
-
+  let userDefaults: UserDefaults
 }
 
 public class RxSettings {
+  public init(userDefaults: UserDefaults) {
+    userDefaultsStorageLayer = UserDefaultsStorageLayer(userDefaults: userDefaults)
+  }
 
+  public func setting<T: RxSettingCompatible>(key: String, defaultValue: T) -> Setting<T> {
+    return Setting<T>(storageLayer: userDefaultsStorageLayer, key: key, defaultValue: defaultValue)
+  }
 
-    private let userDefaultsStorageLayer: UserDefaultsStorageLayer
-
-    public init(userDefaults: UserDefaults) {
-        self.userDefaultsStorageLayer = UserDefaultsStorageLayer(userDefaults: userDefaults)
-    }
-
-    public func setting<T: RxSettingCompatible>(key: String, defaultValue: T) -> Setting<T> {
-        return Setting<T>(storageLayer: userDefaultsStorageLayer, key: key, defaultValue: defaultValue)
-    }
-
+  private let userDefaultsStorageLayer: UserDefaultsStorageLayer
 }
 
-
-
 public class Setting<T: RxSettingCompatible> {
+  public init(storageLayer: StorageLayer, key: String, defaultValue: T) {
+    self.storageLayer = storageLayer
+    self.key = key
+    self.defaultValue = defaultValue
+  }
 
-    public let key: String
-    public let defaultValue: T
-    let storageLayer: StorageLayer
+  public let key: String
+  public let defaultValue: T
 
-    public init(storageLayer: StorageLayer, key: String, defaultValue: T) {
-        self.storageLayer = storageLayer
-        self.key = key
-        self.defaultValue = defaultValue
+  public var isSet: Bool {
+    return storageLayer.isSet(key: key)
+  }
+
+  public var value: T {
+    set(newValue) {
+      storageLayer.save(value: newValue, key: key)
     }
-
-    public func asObservable() -> Observable<T> {
-        return storageLayer.asObservable(key: key, defaultValue: defaultValue)
+    get {
+      return storageLayer.get(key: key, defaultValue: defaultValue)
     }
+  }
 
-    public var isSet: Bool {
-        get {
-            return storageLayer.isSet(key: self.key)
-        }
-    }
+  public func asObservable() -> Observable<T> {
+    return storageLayer.asObservable(key: key, defaultValue: defaultValue)
+  }
 
-    public func remove() {
-        storageLayer.remove(key: self.key)
-    }
+  public func remove() {
+    storageLayer.remove(key: key)
+  }
 
-    public var value: T {
-        set(newValue) {
-            storageLayer.save(value: newValue, key: self.key)
-        }
-        get {
-            return storageLayer.get(key: self.key, defaultValue: self.defaultValue)
-        }
-    }
-
+  let storageLayer: StorageLayer
 }
 
 public protocol RxSettingCompatible {
+  func toPersistedValue() -> Any
 
-    func toPersistedValue() -> Any
-
-    static func fromPersistedValue(value:Any) -> Self
-
+  static func fromPersistedValue(value: Any) -> Self
 }
 
-
-public protocol RxSettingEnum : RxSettingCompatible {
-
-}
+public protocol RxSettingEnum: RxSettingCompatible {}
 
 extension Int: RxSettingCompatible {
+  public func toPersistedValue() -> Any {
+    return self
+  }
 
-    public func toPersistedValue() -> Any {
-        return self
-    }
-
-    public static func fromPersistedValue(value:Any) -> Int {
-        return value as! Int
-    }
+  public static func fromPersistedValue(value: Any) -> Int {
+    return value as! Int
+  }
 }
 
 extension Bool: RxSettingCompatible {
+  public func toPersistedValue() -> Any {
+    return self
+  }
 
-    public func toPersistedValue() -> Any {
-        return self
-    }
-
-    public static func fromPersistedValue(value: Any) -> Bool {
-        return value as! Bool
-    }
+  public static func fromPersistedValue(value: Any) -> Bool {
+    return value as! Bool
+  }
 }
 
 extension String: RxSettingCompatible {
+  public func toPersistedValue() -> Any {
+    return self
+  }
 
-    public func toPersistedValue() -> Any {
-        return self
-    }
-
-    public static func fromPersistedValue(value: Any) -> String {
-        return value as! String
-    }
+  public static func fromPersistedValue(value: Any) -> String {
+    return value as! String
+  }
 }
 
 public extension RxSettingEnum where Self: RawRepresentable {
+  func toPersistedValue() -> Any {
+    return rawValue
+  }
 
-    func toPersistedValue() -> Any {
-        return self.rawValue
-    }
-
-    static func fromPersistedValue(value: Any) -> Self {
-        return Self(rawValue: value as! RawValue)!
-    }
-
+  static func fromPersistedValue(value: Any) -> Self {
+    return Self(rawValue: value as! RawValue)!
+  }
 }
 
 extension Array: RxSettingCompatible {
@@ -194,13 +172,11 @@ extension Array: RxSettingCompatible {
 
 // Set is not supported, work around with an array
 extension Set: RxSettingCompatible {
+  public func toPersistedValue() -> Any {
+    return Array(self)
+  }
 
-    public func toPersistedValue() -> Any {
-        return Array(self)
-    }
-
-    public static func fromPersistedValue(value: Any) -> Set<Element> {
-        return Set(value as! Array<Element>)
-    }
+  public static func fromPersistedValue(value: Any) -> Set<Element> {
+    return Set(value as! [Element])
+  }
 }
-
