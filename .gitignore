@@ -36,3 +36,7 @@ Pods/
 UserInterfaceState.xcuserstate
 /test_output
 /fastlane/test_output
+/vendor
+/Gemfile.lock
+/.swiftpm
+/Package.resolved
