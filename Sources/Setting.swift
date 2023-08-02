@@ -112,101 +112,101 @@ public class Setting<T: RxSettingCompatible> {
 }
 
 public protocol RxSettingCompatible {
-  func toPersistedValue() -> Any
-
   static func fromPersistedValue(value: Any) -> Self
+
+  func toPersistedValue() -> Any
 }
 
 public protocol RxSettingEnum: RxSettingCompatible {}
 
-public extension Int: RxSettingCompatible {
-  func toPersistedValue() -> Any {
-    return self
-  }
-
-  static func fromPersistedValue(value: Any) -> Int {
+extension Int: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> Int {
     return value as! Int
   }
-}
 
-public extension Bool: RxSettingCompatible {
-  func toPersistedValue() -> Any {
+  public func toPersistedValue() -> Any {
     return self
   }
+}
 
-  static func fromPersistedValue(value: Any) -> Bool {
+extension Bool: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> Bool {
     return value as! Bool
   }
-}
 
-public extension String: RxSettingCompatible {
-  func toPersistedValue() -> Any {
+  public func toPersistedValue() -> Any {
     return self
   }
+}
 
-  static func fromPersistedValue(value: Any) -> String {
+extension String: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> String {
     return value as! String
+  }
+
+  public func toPersistedValue() -> Any {
+    return self
   }
 }
 
 public extension RxSettingEnum where Self: RawRepresentable {
-  func toPersistedValue() -> Any {
-    return rawValue
-  }
-
   static func fromPersistedValue(value: Any) -> Self {
     return Self(rawValue: value as! RawValue)!
   }
+
+  func toPersistedValue() -> Any {
+    return rawValue
+  }
 }
 
-public extension Array: RxSettingCompatible where Element: RxSettingCompatible {
-  func toPersistedValue() -> Any {
-    return map { $0.toPersistedValue() }
+extension Array: RxSettingCompatible where Element: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> [Element] {
+    return (value as! [Any]).map { Element.fromPersistedValue(value: $0) }
   }
 
-  static func fromPersistedValue(value: Any) -> [Element] {
-    return (value as! [Any]).map { Element.fromPersistedValue(value: $0) }
+  public func toPersistedValue() -> Any {
+    return map { $0.toPersistedValue() }
   }
 }
 
 // Set is not supported, work around with an array
-public extension Set: RxSettingCompatible {
-  func toPersistedValue() -> Any {
-    return Array(self)
+extension Set: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> Set<Element> {
+    return Set(value as! [Element])
   }
 
-  static func fromPersistedValue(value: Any) -> Set<Element> {
-    return Set(value as! [Element])
+  public func toPersistedValue() -> Any {
+    return Array(self)
   }
 }
 
-public extension Double: RxSettingCompatible {
-  static func fromPersistedValue(value: Any) -> Double {
+extension Double: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> Double {
     value as! Double
   }
 
-  func toPersistedValue() -> Any {
+  public func toPersistedValue() -> Any {
     self
   }
 }
 
-public extension UUID: RxSettingCompatible {
-  static func fromPersistedValue(value: Any) -> UUID {
+extension UUID: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> UUID {
     UUID(uuidString: value as! String)!
   }
 
-  func toPersistedValue() -> Any {
+  public func toPersistedValue() -> Any {
     uuidString
   }
 }
 
-public extension Date: RxSettingCompatible {
-  func toPersistedValue() -> Any {
-    DateFormatter.iso8601.string(from: self)
+extension Date: RxSettingCompatible {
+  public static func fromPersistedValue(value: Any) -> Date {
+    DateFormatter.iso8601.date(from: value as! String)!
   }
 
-  static func fromPersistedValue(value: Any) -> Date {
-    DateFormatter.iso8601.date(from: value as! String)!
+  public func toPersistedValue() -> Any {
+    DateFormatter.iso8601.string(from: self)
   }
 }
 
