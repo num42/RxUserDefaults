@@ -58,7 +58,6 @@ But note that persisting types that are not supported by the UserDefaults will f
 
 ## Installation
 
-
 RxUserDefaults is available through SPM
 
 ## Requirements
