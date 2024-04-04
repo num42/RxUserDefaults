@@ -42,10 +42,10 @@ public class Setting<T: RxSettingCompatible> {
   }
 
   public func asObservable() -> Observable<T> {
-      storageLayer.asObservable(
-        key: key,
-        defaultValue: defaultValue
-      )
+    storageLayer.asObservable(
+      key: key,
+      defaultValue: defaultValue
+    )
   }
 
   public func remove() {

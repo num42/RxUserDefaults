@@ -168,9 +168,9 @@ class RxUserDefaultsTests: XCTestCase {
 
     let result = scheduler.start { () -> Observable<String> in
 
-        _ = scheduler.createHotObservable(
-            [Recorded.next(500, ())]
-        ).subscribe(onNext: { _ in
+      _ = scheduler.createHotObservable(
+        [Recorded.next(500, ())]
+      ).subscribe(onNext: { _ in
 
         // set two values
         setting.value = "string_value_1"
@@ -230,9 +230,9 @@ class RxUserDefaultsTests: XCTestCase {
 
     let result = scheduler.start { () -> Observable<TestEnum> in
 
-        _ = scheduler.createHotObservable(
-            [Recorded.next(500, ())]
-        ).subscribe(onNext: { _ in
+      _ = scheduler.createHotObservable(
+        [Recorded.next(500, ())]
+      ).subscribe(onNext: { _ in
 
         // set two values
         setting.value = .test0
