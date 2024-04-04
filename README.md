@@ -20,12 +20,18 @@ let setting = settings.setting(key: "INSERT_KEY", defaultValue: "DEFAULT")
 ```
 The arguments should be self explanatory.
 
-Currently only following Types are supported:
-- String
-- Int
-- Bool
+Currently the following Types are supported:
+
 - Array (only with the types supported by the UserDefaults)
+- Bool
+- Codable (using JSON Decoder)
+- Date (as ISO8601 String)
+- Double
 - Enum (but enum must conform to the RxSettingEnum protocol)
+- Int
+- Set
+- String
+- UUID
 
 Functions you can use:
 ```swift
