@@ -1,6 +1,5 @@
 # RxUserDefaults
 
-[![CI Status](http://img.shields.io/travis/num42/RxUserDefaults.svg?style=flat)](https://travis-ci.org/num42/RxUserDefaults)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Overview
