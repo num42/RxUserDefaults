@@ -46,6 +46,46 @@ class RxUserDefaultsTests: XCTestCase {
     XCTAssert(!setting.isSet)
   }
 
+  func testCodableSetting() {
+    struct ExampleCodable: Codable, Equatable, RxSettingCompatible {
+      let aStringProperty: String
+      let anIntProperty: Int
+    }
+
+    let defaultValue = ExampleCodable(
+      aStringProperty: "bla",
+      anIntProperty: 0
+    )
+
+    let setting = settings.setting(
+      key: "codable_test",
+      defaultValue: defaultValue
+    )
+
+    // first test default value
+    XCTAssertEqual(setting.value, defaultValue)
+    // test that setting is not persisted
+    XCTAssert(!setting.isSet)
+
+    let anotherValue = ExampleCodable(
+      aStringProperty: "blubb",
+      anIntProperty: 1
+    )
+
+    // set the value
+    setting.value = anotherValue
+
+    // check if value is present
+    XCTAssertEqual(setting.value, anotherValue)
+    XCTAssert(setting.isSet)
+
+    // remove value
+    setting.remove()
+
+    // check that value was removed
+    XCTAssert(!setting.isSet)
+  }
+
   func testIntSetting() {
     let setting = settings.setting(key: "int_test", defaultValue: 42)
 

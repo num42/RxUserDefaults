@@ -26,7 +26,8 @@ let package = Package(
       dependencies: [
         .product(name: "RxSwift", package: "RxSwift"),
         .product(name: "RxCocoa", package: "RxSwift")
-      ]
+      ],
+      resources: [.copy("PrivacyInfo.xcprivacy")]
     ),
     .testTarget(
       name: "RxUserDefaultsTests",
