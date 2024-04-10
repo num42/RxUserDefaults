@@ -56,50 +56,15 @@ I want to support everything that the UserDefaults support (e.g. Dictionary, URL
 For now you can expand the library to more types by conforming to the RxSettingCompatible protocol.
 But note that persisting types that are not supported by the UserDefaults will fail silently.
 
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Installation
 
-
-
-RxUserDefaults is available through:
-
-- [Carthage](https://github.com/Carthage/Carthage)
-To install, simply add the following line to your Cartfile:
-```ruby
-github "num42/RxUserDefaults"
-```
-
-- [CocoaPods](http://cocoapods.org)
-To install, simply add the following line to your Podfile:
-```ruby
-pod "RxUserDefaults"
-```
+RxUserDefaults is available through SPM
 
 ## Requirements
 
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 
-## Project
-
-The xcodeproj file is generated using [xcodegen].
-
-To update it from the project.yml, run
-
-```shell
-xcodegen
-```
-
-or, if you are using [mint]
-
-```shell
-mint run yonaskolb/XcodeGen
-```
-
-## Author
+## Authors
 
 David Kraus, kraus.david.dev@gmail.com
 
@@ -128,5 +93,3 @@ License
 [rx-preferences]: https://github.com/f2prateek/rx-preferences
 [wrap]: https://github.com/JohnSundell/Wrap
 [unbox]: https://github.com/JohnSundell/Unbox
-[xcodegen]: https://github.com/yonaskolb/XcodeGen
-[mint]: https://github.com/yonaskolb/Mint
