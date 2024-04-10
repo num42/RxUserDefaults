@@ -1,0 +1,22 @@
+--disable unusedArguments
+--disable blankLinesBetweenScopes
+--disable blankLinesAroundMark
+--disable redundantSelf
+--disable wrapMultilineStatementBraces
+--enable wrapEnumCases
+--enable sortSwitchCases
+--enable acronyms
+--enable enumNamespaces
+--enable organizeDeclarations
+  --beforemarks typealias,struct,enum
+  --markcategories false
+--binarygrouping none
+--commas inline
+--decimalgrouping none
+--hexgrouping none
+--indent 2
+--octalgrouping none
+--patternlet inline
+--wraparguments beforefirst
+--wrapcollections beforefirst
+--modifierorder static,weak

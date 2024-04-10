@@ -1,10 +1,10 @@
 import RxBlocking
 import RxSwift
 import RxTest
-import RxUserDefaults
+@testable import RxUserDefaults
 import XCTest
 
-class Tests: XCTestCase {
+class RxUserDefaultsTests: XCTestCase {
   var userDefaults: UserDefaults!
   var settings: RxSettings!
 
@@ -168,7 +168,9 @@ class Tests: XCTestCase {
 
     let result = scheduler.start { () -> Observable<String> in
 
-      _ = scheduler.createHotObservable([next(500, ())]).subscribe(onNext: { _ in
+      _ = scheduler.createHotObservable(
+        [Recorded.next(500, ())]
+      ).subscribe(onNext: { _ in
 
         // set two values
         setting.value = "string_value_1"
@@ -228,7 +230,9 @@ class Tests: XCTestCase {
 
     let result = scheduler.start { () -> Observable<TestEnum> in
 
-      _ = scheduler.createHotObservable([next(500, ())]).subscribe(onNext: { _ in
+      _ = scheduler.createHotObservable(
+        [Recorded.next(500, ())]
+      ).subscribe(onNext: { _ in
 
         // set two values
         setting.value = .test0

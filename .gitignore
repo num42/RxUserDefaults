@@ -40,3 +40,4 @@ UserInterfaceState.xcuserstate
 /Gemfile.lock
 /.swiftpm
 /Package.resolved
+/.build
