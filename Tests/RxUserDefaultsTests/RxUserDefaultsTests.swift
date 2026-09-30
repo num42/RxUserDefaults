@@ -317,4 +317,36 @@ class RxUserDefaultsTests: XCTestCase {
       XCTFail()
     }
   }
+
+  func testRxSettingSerializesConcurrentWrites() {
+    let setting = settings.setting(key: "rx_concurrent_test", defaultValue: 0)
+    let state = NSLock()
+    var activeThread: Thread?
+    var overlapped = false
+    var wroteFromOnNext = false
+
+    let subscription = setting.asObservable().subscribe(onNext: { _ in
+      state.lock()
+      if let activeThread, activeThread != Thread.current { overlapped = true }
+      let isOuterCall = activeThread == nil
+      activeThread = Thread.current
+      let writeNow = isOuterCall && !wroteFromOnNext
+      wroteFromOnNext = wroteFromOnNext || writeNow
+      state.unlock()
+
+      // Writing the observed key inside onNext must not deadlock.
+      if writeNow { setting.value = -1 }
+      Thread.sleep(forTimeInterval: 0.001)
+
+      state.lock()
+      if isOuterCall { activeThread = nil }
+      state.unlock()
+    })
+
+    DispatchQueue.concurrentPerform(iterations: 50) { setting.value = $0 }
+    subscription.dispose()
+
+    XCTAssertTrue(wroteFromOnNext)
+    XCTAssertFalse(overlapped)
+  }
 }

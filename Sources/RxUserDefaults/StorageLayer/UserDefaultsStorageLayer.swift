@@ -7,8 +7,12 @@ public class UserDefaultsStorageLayer: StorageLayer {
   }
 
   public func asObservable<T: RxSettingCompatible>(key: String, defaultValue: T) -> Observable<T> {
-    return userDefaults.rx.observe(T.self, key).map { _ -> T in
-      self.get(key: key, defaultValue: defaultValue)
+    return Observable.create { observer in
+      let keyValueObserver = KeyValueObserver(object: self.userDefaults, keyPath: key) {
+        observer.onNext(self.get(key: key, defaultValue: defaultValue))
+      }
+
+      return Disposables.create { keyValueObserver.invalidate() }
     }
   }
 
@@ -34,4 +38,37 @@ public class UserDefaultsStorageLayer: StorageLayer {
   }
 
   let userDefaults: UserDefaults
+}
+
+/// KVO on one key: `.initial` fires once on
+/// subscribe, then once per change notification. Retains the observed object.
+private final class KeyValueObserver: NSObject {
+  init(object: NSObject, keyPath: String, onChange: @escaping () -> Void) {
+    self.object = object
+    self.keyPath = keyPath
+    self.onChange = onChange
+    super.init()
+    object.addObserver(self, forKeyPath: keyPath, options: [.initial, .new], context: nil)
+  }
+
+  func invalidate() {
+    object.removeObserver(self, forKeyPath: keyPath)
+  }
+
+  override func observeValue(
+    forKeyPath keyPath: String?,
+    of object: Any?,
+    change: [NSKeyValueChangeKey: Any]?,
+    context: UnsafeMutableRawPointer?
+  ) {
+    // Serializes onNext across threads; recursive, as onNext may set the key.
+    lock.lock()
+    defer { lock.unlock() }
+    onChange()
+  }
+
+  private let object: NSObject
+  private let keyPath: String
+  private let onChange: () -> Void
+  private let lock = NSRecursiveLock()
 }
