@@ -15,7 +15,6 @@
  */
 
 import Foundation
-import RxCocoa
 import RxSwift
 
 public class Setting<T: RxSettingCompatible> {

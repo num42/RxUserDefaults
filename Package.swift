@@ -24,8 +24,7 @@ let package = Package(
     .target(
       name: "RxUserDefaults",
       dependencies: [
-        .product(name: "RxSwift", package: "RxSwift"),
-        .product(name: "RxCocoa", package: "RxSwift")
+        .product(name: "RxSwift", package: "RxSwift")
       ],
       resources: [.copy("PrivacyInfo.xcprivacy")]
     ),
